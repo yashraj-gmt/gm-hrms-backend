@@ -8,6 +8,6 @@ public class HrmsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HrmsApplication.class, args);
-	} 
+	}
 
 }
