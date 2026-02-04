@@ -18,7 +18,9 @@ public class Employee {
 
     @Column(name = "last_name")
     private String lastName;
+
     private String gender;
+
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 

@@ -12,10 +12,13 @@ public class EmployeeContact {
 
     @Column(name = "personal_email")
     private String personalEmail;
+
     @Column(name = "office_email")
     private String officeEmail;
+
     @Column(name = "personal_phone")
     private String personalPhone;
+
     @Column(name = "emergency_phone")
     private String emergencyPhone;
 
@@ -23,4 +26,3 @@ public class EmployeeContact {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 }
-
