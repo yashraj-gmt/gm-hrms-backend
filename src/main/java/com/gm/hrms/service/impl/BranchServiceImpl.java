@@ -17,6 +17,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -34,19 +35,18 @@ public class BranchServiceImpl implements BranchService {
     public BranchResponseDTO create(BranchRequestDTO dto) {
 
         if (branchRepository.existsByBranchCode(dto.getBranchCode())) {
-            throw new DuplicateResourceException("Branch code already exists: " + dto.getBranchCode());
+            throw new DuplicateResourceException(
+                    "Branch code already exists: " + dto.getBranchCode());
         }
 
         Branch branch = BranchMapper.toEntity(dto, null);
 
-        // Resolve parent
         if (dto.getParentId() != null) {
             Branch parent = branchRepository.findById(dto.getParentId())
                     .orElseThrow(() -> new ResourceNotFoundException("Parent branch not found"));
             branch.setParentBranch(parent);
         }
 
-        // Save address
         if (dto.getAddress() != null) {
             Address address = AddressMapper.toEntity(dto.getAddress());
             addressRepository.save(address);
@@ -64,20 +64,18 @@ public class BranchServiceImpl implements BranchService {
         Branch branch = branchRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Branch not found"));
 
-        // Duplicate code check (exclude self)
         if (dto.getBranchCode() != null
                 && branchRepository.existsByBranchCodeAndIdNot(dto.getBranchCode(), id)) {
-            throw new DuplicateResourceException("Branch code already in use: " + dto.getBranchCode());
+            throw new DuplicateResourceException(
+                    "Branch code already in use: " + dto.getBranchCode());
         }
 
-        // Update parent
         if (dto.getParentId() != null) {
             Branch parent = branchRepository.findById(dto.getParentId())
                     .orElseThrow(() -> new ResourceNotFoundException("Parent branch not found"));
             branch.setParentBranch(parent);
         }
 
-        // Update address
         Address address = branch.getAddress();
         if (dto.getAddress() != null) {
             if (address == null) {
@@ -88,9 +86,27 @@ public class BranchServiceImpl implements BranchService {
             }
         }
 
+        boolean wasActive = Boolean.TRUE.equals(branch.getActive());
+
         BranchMapper.patchEntity(branch, dto, address);
         branchRepository.save(branch);
+        boolean isNowInactive = Boolean.FALSE.equals(branch.getActive());
+        if (wasActive && isNowInactive) {
+            cascadeInactiveToChildren(branch);
+        }
+
         return BranchMapper.toResponse(branch);
+    }
+
+
+    private void cascadeInactiveToChildren(Branch branch) {
+        for (Branch child : branch.getChildren()) {
+            if (Boolean.TRUE.equals(child.getActive())) {
+                child.setActive(false);
+                branchRepository.save(child);
+            }
+            cascadeInactiveToChildren(child);
+        }
     }
 
     // ── GET BY ID ─────────────────────────────────────────────────────────────
@@ -126,7 +142,6 @@ public class BranchServiceImpl implements BranchService {
     @Override
     @Transactional(readOnly = true)
     public List<BranchResponseDTO> getTree() {
-        // Only fetch root nodes; children cascade via @OneToMany
         return branchRepository.findRootBranches().stream()
                 .map(BranchMapper::toTreeResponse)
                 .collect(Collectors.toList());
@@ -137,26 +152,28 @@ public class BranchServiceImpl implements BranchService {
     public void reorder(BranchReorderRequestDTO dto) {
         if (dto.getItems() == null || dto.getItems().isEmpty()) return;
 
-        // Build a map for quick lookup
         Map<Long, Branch> branchMap = branchRepository.findAllById(
-                dto.getItems().stream().map(BranchReorderItemDTO::getId).collect(Collectors.toList())
+                dto.getItems().stream()
+                        .map(BranchReorderItemDTO::getId)
+                        .collect(Collectors.toList())
         ).stream().collect(Collectors.toMap(Branch::getId, b -> b));
 
         for (BranchReorderItemDTO item : dto.getItems()) {
             Branch branch = branchMap.get(item.getId());
             if (branch == null) continue;
 
-            // Update sortOrder
             if (item.getSortOrder() != null) {
                 branch.setSortOrder(item.getSortOrder());
             }
 
-            // Update parent
             if (item.getParentId() == null) {
                 branch.setParentBranch(null);
             } else if (!item.getParentId().equals(
-                    branch.getParentBranch() != null ? branch.getParentBranch().getId() : null)) {
-                Branch newParent = branchMap.getOrDefault(item.getParentId(),
+                    branch.getParentBranch() != null
+                            ? branch.getParentBranch().getId()
+                            : null)) {
+                Branch newParent = branchMap.getOrDefault(
+                        item.getParentId(),
                         branchRepository.findById(item.getParentId()).orElse(null));
                 branch.setParentBranch(newParent);
             }
@@ -165,7 +182,7 @@ public class BranchServiceImpl implements BranchService {
         branchRepository.saveAll(branchMap.values());
     }
 
-    // ── DELETE (soft) ─────────────────────────────────────────────────────────
+    // ── DELETE
     @Override
     public void delete(Long id) {
         Branch branch = branchRepository.findById(id)
@@ -175,7 +192,9 @@ public class BranchServiceImpl implements BranchService {
     }
 
     private void softDeleteRecursive(Branch branch) {
-        branch.setActive(false);
+        branch.setDeleted(true);
+        branch.setDeletedAt(LocalDateTime.now());
+
         for (Branch child : branch.getChildren()) {
             softDeleteRecursive(child);
         }

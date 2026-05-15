@@ -18,6 +18,8 @@ public interface DesignationRepository extends JpaRepository<Designation, Long> 
     boolean existsByNameIgnoreCaseAndDeletedFalse(String name);
 
     boolean existsByName(String name);
+
     boolean existsByNameIgnoreCase(String name);
+
     Optional<Designation> findByNameIgnoreCase(String name);
 }

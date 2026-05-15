@@ -3,7 +3,9 @@ package com.gm.hrms.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLRestriction;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @Table(name = "branches")
 @Getter
 @Setter
+@SQLRestriction("deleted = false")          // ← auto-filter on EVERY query
 public class Branch extends BaseEntity {
 
     @Id
@@ -28,7 +31,12 @@ public class Branch extends BaseEntity {
     @Column(name = "sort_order", nullable = false)
     private Integer sortOrder = 0;
 
-    /* Self-referential parent–child ---------------------------------------- */
+    @Column(name = "deleted", nullable = false)
+    private Boolean deleted = false;
+
+    @Column(name = "deleted_at")
+    private LocalDateTime deletedAt;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_branch_id")
     private Branch parentBranch;
@@ -37,7 +45,6 @@ public class Branch extends BaseEntity {
     @OrderBy("sortOrder ASC")
     private List<Branch> children = new ArrayList<>();
 
-    /* Address -------------------------------------------------------------- */
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
