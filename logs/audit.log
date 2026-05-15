@@ -1,0 +1,16 @@
+2026-05-15 12:09:05.938 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=320ms | DESC=User login attempt | ERROR=-
+2026-05-15 12:26:15.500 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=22ms | DESC=Access token refresh | ERROR=-
+2026-05-15 12:43:00.516 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=249ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-15 12:43:05.566 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=88ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-15 12:43:36.767 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=82ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-15 12:44:08.883 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=83ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-15 12:44:11.169 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=92ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-15 12:44:24.733 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=313ms | DESC=User login attempt | ERROR=-
+2026-05-15 12:45:22.585 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=128ms | DESC=User login attempt | ERROR=-
+2026-05-15 12:46:31.999 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=50ms | DESC=Access token refresh | ERROR=-
+2026-05-15 15:14:20.525 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=1820ms | DESC=User login attempt | ERROR=-
+2026-05-15 15:15:36.220 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=57ms | DESC=Access token refresh | ERROR=-
+2026-05-15 15:29:35.357 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=101ms | DESC=Access token refresh | ERROR=-
+2026-05-15 15:38:17.525 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=3ms | DESC=Access token refresh | ERROR=Refresh token not found
+2026-05-15 15:38:42.172 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=143ms | DESC=User login attempt | ERROR=-
+2026-05-15 15:42:24.521 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=90ms | DESC=Access token refresh | ERROR=-

@@ -1,0 +1,27 @@
+2026-05-04 14:18:40.241 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=364ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:18:44.719 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=145ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:18:57.124 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=139ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:19:21.134 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=123ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:19:48.315 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=128ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:24:42.221 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=215ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:24:51.374 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=107ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:41:12.335 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=454ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-04 14:46:27.947 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=4417ms | DESC=User login attempt | ERROR=-
+2026-05-04 14:54:53.374 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=299ms | DESC=User login attempt | ERROR=-
+2026-05-04 14:57:58.645 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=195ms | DESC=User login attempt | ERROR=-
+2026-05-04 15:17:58.522 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=435ms | DESC=User login attempt | ERROR=-
+2026-05-04 15:29:11.342 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=734ms | DESC=User login attempt | ERROR=-
+2026-05-04 15:33:41.747 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=457ms | DESC=User login attempt | ERROR=-
+2026-05-04 16:18:36.790 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=955ms | DESC=User login attempt | ERROR=-
+2026-05-04 16:22:21.602 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=397ms | DESC=User login attempt | ERROR=-
+2026-05-04 17:10:41.894 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=1916ms | DESC=User login attempt | ERROR=-
+2026-05-04 17:27:13.662 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=3148ms | DESC=Access token refresh | ERROR=-
+2026-05-04 17:27:13.704 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=40ms | DESC=Access token refresh | ERROR=Refresh token not found
+2026-05-04 17:27:25.167 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=612ms | DESC=User login attempt | ERROR=-
+2026-05-04 17:42:48.169 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=526ms | DESC=Access token refresh | ERROR=-
+2026-05-04 17:43:07.144 [AUDIT] ACTION=CREATE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=323ms | DESC=Create holiday — affects org-wide leave calendar | ERROR=-
+2026-05-04 17:43:54.015 [AUDIT] ACTION=CREATE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=25ms | DESC=Create holiday — affects org-wide leave calendar | ERROR=-
+2026-05-04 17:44:56.003 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=236ms | DESC=User login attempt | ERROR=-
+2026-05-04 17:45:10.896 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=226ms | DESC=User login attempt | ERROR=-
+2026-05-04 17:47:30.813 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=216ms | DESC=User login attempt | ERROR=-
+2026-05-04 18:02:31.986 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=192ms | DESC=Access token refresh | ERROR=-
