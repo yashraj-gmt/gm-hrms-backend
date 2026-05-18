@@ -12,16 +12,17 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BreakPolicyRepository extends JpaRepository<BreakPolicy, Long> {
 
-    boolean existsByBreakName(String breakName);
+    boolean existsByBreakNameAndIsDeletedFalse(String breakName);
 
     @Query("""
         SELECT b FROM BreakPolicy b
-        WHERE (
+        WHERE b.isDeleted = false
+        AND (
             :search IS NULL OR
             LOWER(b.breakName) LIKE LOWER(CONCAT('%', CAST(:search AS string), '%'))
         )
         AND (:category IS NULL OR b.breakCategory = :category)
-        AND (:isPaid IS NULL OR b.isPaid = :isPaid)
+        AND (:isPaid   IS NULL OR b.isPaid         = :isPaid)
     """)
     Page<BreakPolicy> search(
             @Param("search")   String        search,
@@ -29,4 +30,10 @@ public interface BreakPolicyRepository extends JpaRepository<BreakPolicy, Long> 
             @Param("isPaid")   Boolean       isPaid,
             Pageable pageable
     );
+
+    long countByIsDeletedFalse();
+
+    long countByIsDeletedFalseAndIsActiveTrue();
+
+    long countByIsDeletedFalseAndBreakCategory(BreakCategory breakCategory);
 }

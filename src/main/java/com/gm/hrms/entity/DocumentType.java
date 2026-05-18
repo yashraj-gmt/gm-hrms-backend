@@ -3,7 +3,9 @@ package com.gm.hrms.entity;
 import com.gm.hrms.enums.ApplicableType;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.SQLRestriction;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
@@ -13,6 +15,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@SQLRestriction("deleted = false")
 public class DocumentType extends BaseEntity {
 
     @Id
@@ -38,4 +41,12 @@ public class DocumentType extends BaseEntity {
 
     @Builder.Default
     private Boolean active = true;
+
+    // ── Soft-delete fields ────────────────────────────────────────────────────
+    @Column(name = "deleted", nullable = false)
+    @Builder.Default
+    private Boolean deleted = false;
+
+    @Column(name = "deleted_at")
+    private LocalDateTime deletedAt;
 }

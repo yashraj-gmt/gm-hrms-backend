@@ -12,4 +12,5 @@ public class InternCourseRequestDTO {
     private String description;
 
     private Boolean status;
+    private Boolean active; 
 }

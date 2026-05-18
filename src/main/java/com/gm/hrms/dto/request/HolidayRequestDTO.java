@@ -19,4 +19,6 @@ public class HolidayRequestDTO {
     private String description;
 
     private Boolean isOptional;
+
+    private Boolean isActive;
 }

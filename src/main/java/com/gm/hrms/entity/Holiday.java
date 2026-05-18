@@ -36,6 +36,9 @@ public class Holiday {
     @Column(name = "is_active")
     private Boolean isActive;
 
+    @Column(name = "is_deleted", nullable = false)
+    private Boolean isDeleted = false;    // true only after explicit DELETE — never shown
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 }

@@ -7,20 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface InternCourseRepository extends JpaRepository<InternCourse, Long> {
 
+    boolean existsByNameIgnoreCaseAndDeletedFalse(String name);
 
-    // Used on CREATE — checks entire table
-    boolean existsByNameIgnoreCase(String name);
+    boolean existsByNameIgnoreCaseAndIdNotAndDeletedFalse(String name, Long id);
 
-    // Used on UPDATE — excludes the record being edited to avoid self-conflict
-    boolean existsByNameIgnoreCaseAndIdNot(String name, Long id);
+    Page<InternCourse> findByDeletedFalse(Pageable pageable);
 
-    // ── List queries ──────────────────────────────────────────────────────────
+    long countByStatusTrueAndDeletedFalse();
 
-    // FIX: was findByStatusTrue() — now returns ALL (active + inactive)
-    // so soft-deleted records remain visible in the listing with Inactive badge
-    Page<InternCourse> findAll(Pageable pageable);
-
-    // ── Stats counts ──────────────────────────────────────────────────────────
-    long countByStatusTrue();
-    long countByStatusFalse();
+    long countByStatusFalseAndDeletedFalse();
 }

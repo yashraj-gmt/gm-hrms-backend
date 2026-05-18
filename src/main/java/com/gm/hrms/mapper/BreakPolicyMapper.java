@@ -16,6 +16,7 @@ public class BreakPolicyMapper {
                 .breakEnd(dto.getBreakEnd())
                 .breakDurationMinutes(dto.getBreakDurationMinutes())
                 .isPaid(dto.getIsPaid())
+                .isDeleted(false)
                 .build();
     }
 
@@ -28,7 +29,6 @@ public class BreakPolicyMapper {
         if (dto.getBreakDurationMinutes() != null) entity.setBreakDurationMinutes(dto.getBreakDurationMinutes());
         if (dto.getIsPaid()               != null) entity.setIsPaid(dto.getIsPaid());
 
-        // ✅ Added — supports toggle active/inactive via PATCH
         if (dto.getIsActive()             != null) entity.setIsActive(dto.getIsActive());
     }
 
@@ -41,7 +41,6 @@ public class BreakPolicyMapper {
                 .breakEnd(entity.getBreakEnd())
                 .breakDurationMinutes(entity.getBreakDurationMinutes())
                 .isPaid(entity.getIsPaid())
-                // ✅ Added — exposed so the frontend can render status badge
                 .isActive(entity.getIsActive())
                 .build();
     }

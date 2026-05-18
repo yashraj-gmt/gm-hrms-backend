@@ -76,13 +76,18 @@ public class BranchServiceImpl implements BranchService {
             branch.setParentBranch(parent);
         }
 
+        // ── Address handling ──────────────────────────────────────────────────
         Address address = branch.getAddress();
         if (dto.getAddress() != null) {
             if (address == null) {
+                // No address yet — create a new one
                 address = AddressMapper.toEntity(dto.getAddress());
-                addressRepository.save(address);
+                address = addressRepository.save(address); // get the persisted instance
+                branch.setAddress(address);
             } else {
+                // Address already exists — patch in-place and save explicitly
                 AddressMapper.patchEntity(address, dto.getAddress());
+                addressRepository.save(address); // ← added: don't rely solely on dirty-check
             }
         }
 
@@ -90,6 +95,7 @@ public class BranchServiceImpl implements BranchService {
 
         BranchMapper.patchEntity(branch, dto, address);
         branchRepository.save(branch);
+
         boolean isNowInactive = Boolean.FALSE.equals(branch.getActive());
         if (wasActive && isNowInactive) {
             cascadeInactiveToChildren(branch);
@@ -97,7 +103,6 @@ public class BranchServiceImpl implements BranchService {
 
         return BranchMapper.toResponse(branch);
     }
-
 
     private void cascadeInactiveToChildren(Branch branch) {
         for (Branch child : branch.getChildren()) {

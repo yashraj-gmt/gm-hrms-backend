@@ -28,58 +28,36 @@ public class InternCourseServiceImpl implements InternCourseService {
     // ── CREATE ────────────────────────────────────────────────────────────────
     @Override
     public InternCourseResponseDTO createCourse(InternCourseRequestDTO dto) {
-
-        if (repository.existsByNameIgnoreCase(dto.getName())) {
-            throw new DuplicateResourceException(
-                    "Course already exists with name: " + dto.getName()
-            );
+        if (repository.existsByNameIgnoreCaseAndDeletedFalse(dto.getName())) {
+            throw new DuplicateResourceException("Course already exists with name: " + dto.getName());
         }
-
         InternCourse course = InternCourseMapper.toEntity(dto);
         repository.save(course);
-
         return InternCourseMapper.toResponse(course);
     }
 
-    // ── UPDATE (PATCH) ────────────────────────────────────────────────────────
+    // ── UPDATE ────────────────────────────────────────────────────────────────
     @Override
     public InternCourseResponseDTO updateCourse(Long id, InternCourseRequestDTO dto) {
-
         InternCourse course = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        "Course not found with id: " + id
-                ));
+                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
 
-        // FIX: original check was wrong — it threw duplicate error even when
-        // the name belonged to the same record being edited.
-        // existsByNameIgnoreCaseAndIdNot excludes the current record.
         if (dto.getName() != null &&
-                repository.existsByNameIgnoreCaseAndIdNot(dto.getName().trim(), id)) {
-            throw new DuplicateResourceException(
-                    "Course already exists with name: " + dto.getName()
-            );
+                repository.existsByNameIgnoreCaseAndIdNotAndDeletedFalse(dto.getName().trim(), id)) {
+            throw new DuplicateResourceException("Course already exists with name: " + dto.getName());
         }
-
         InternCourseMapper.patchUpdate(course, dto);
         repository.save(course);
-
         return InternCourseMapper.toResponse(course);
     }
 
-    // ── GET ALL (active + inactive) ───────────────────────────────────────────
-    // FIX: was findByStatusTrue() — soft-deleted (inactive) records were
-    // disappearing from the list. Now returns ALL so the Inactive badge shows.
+    // ── GET ALL — non-deleted only ────────────────────────────────────────────
     @Override
     @Transactional(readOnly = true)
     public PageResponseDTO<InternCourseResponseDTO> getAllCourses(Pageable pageable) {
-
-        Page<InternCourse> page = repository.findAll(pageable);
-
+        Page<InternCourse> page = repository.findByDeletedFalse(pageable);
         List<InternCourseResponseDTO> content = page.getContent()
-                .stream()
-                .map(InternCourseMapper::toResponse)
-                .toList();
-
+                .stream().map(InternCourseMapper::toResponse).toList();
         return buildPageResponse(page, content);
     }
 
@@ -96,32 +74,23 @@ public class InternCourseServiceImpl implements InternCourseService {
         );
     }
 
-    // ── SOFT DELETE ───────────────────────────────────────────────────────────
-    // Sets status = false. Record stays in DB and still appears in listing
-    // with Inactive badge. Re-activate via PATCH with status: true.
+    // ── SOFT DELETE — sets deleted=true, disappears from listing ──────────────
     @Override
     public void deleteCourse(Long id) {
-
         InternCourse course = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        "Course not found with id: " + id
-                ));
-
-        course.setStatus(false);
+                .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
+        course.setDeleted(true);
         repository.save(course);
     }
 
-    // ── STATS ─────────────────────────────────────────────────────────────────
+    // ── STATS — exclude deleted ───────────────────────────────────────────────
     @Override
     @Transactional(readOnly = true)
     public InternCourseStatsDTO getStats() {
-        long active   = repository.countByStatusTrue();
-        long inactive = repository.countByStatusFalse();
+        long active   = repository.countByStatusTrueAndDeletedFalse();
+        long inactive = repository.countByStatusFalseAndDeletedFalse();
         return InternCourseStatsDTO.builder()
-                .total(active + inactive)
-                .active(active)
-                .inactive(inactive)
-                .build();
+                .total(active + inactive).active(active).inactive(inactive).build();
     }
 
     // ── Private helper ────────────────────────────────────────────────────────

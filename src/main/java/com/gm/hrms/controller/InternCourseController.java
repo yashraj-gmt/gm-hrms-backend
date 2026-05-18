@@ -21,8 +21,7 @@ public class InternCourseController {
 
     private final InternCourseService service;
 
-    // ── CREATE → ADMIN only ───────────────────────────────────────────────────
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'HR')")
     @PostMapping
     public ResponseEntity<ApiResponse<InternCourseResponseDTO>> create(
             @Valid @RequestBody InternCourseRequestDTO dto) {
@@ -36,9 +35,8 @@ public class InternCourseController {
         );
     }
 
-    // ── UPDATE (PATCH) → ADMIN only ───────────────────────────────────────────
-    // Send { status: true } to re-activate a soft-deleted course
-    @PreAuthorize("hasRole('ADMIN')")
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'HR')")
     @PatchMapping("/{id}")
     public ResponseEntity<ApiResponse<InternCourseResponseDTO>> update(
             @PathVariable Long id,
@@ -53,8 +51,7 @@ public class InternCourseController {
         );
     }
 
-    // ── GET ALL (active + inactive) → ADMIN + HR ──────────────────────────────
-    // Returns ALL courses regardless of status, sorted by id desc
+
     @PreAuthorize("hasAnyRole('ADMIN', 'HR')")
     @GetMapping
     public ResponseEntity<ApiResponse<PageResponseDTO<InternCourseResponseDTO>>> getAll(

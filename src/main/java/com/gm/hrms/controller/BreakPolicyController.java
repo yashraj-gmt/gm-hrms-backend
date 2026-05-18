@@ -4,6 +4,7 @@ import com.gm.hrms.audit.AuditAction;
 import com.gm.hrms.audit.Auditable;
 import com.gm.hrms.dto.request.BreakPolicyRequestDTO;
 import com.gm.hrms.dto.response.BreakPolicyResponseDTO;
+import com.gm.hrms.dto.response.BreakPolicyStatsDTO;
 import com.gm.hrms.dto.response.PageResponseDTO;
 import com.gm.hrms.enums.BreakCategory;
 import com.gm.hrms.payload.ApiResponse;
@@ -39,7 +40,8 @@ public class BreakPolicyController {
         );
     }
 
-    // ── UPDATE  →  ADMIN + HR  (also handles toggle via isActive field) ───────
+    // ── UPDATE  →  ADMIN + HR
+    //    Also handles isActive toggle when editing via the Edit form (PATCH with isActive field)
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @PatchMapping("/{id}")
     @Auditable(action = AuditAction.UPDATE_BREAK_POLICY, resource = "BreakPolicy", description = "Update break policy")
@@ -72,15 +74,15 @@ public class BreakPolicyController {
     }
 
     // ── GET ALL  →  ADMIN + HR
-    //    Supports: ?search=tea&category=FIXED&isPaid=true&page=0&size=10
+    //    Only returns active records. Supports: ?search=tea&category=FIXED&isPaid=true&page=0&size=10
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @GetMapping
     public ResponseEntity<ApiResponse<PageResponseDTO<BreakPolicyResponseDTO>>> getAll(
-            @RequestParam(defaultValue = "0")  int          page,
-            @RequestParam(defaultValue = "10") int          size,
-            @RequestParam(required = false)    String       search,
+            @RequestParam(defaultValue = "0")  int           page,
+            @RequestParam(defaultValue = "10") int           size,
+            @RequestParam(required = false)    String        search,
             @RequestParam(required = false)    BreakCategory category,
-            @RequestParam(required = false)    Boolean      isPaid) {
+            @RequestParam(required = false)    Boolean       isPaid) {
 
         PageRequest pageable = PageRequest.of(page, size, Sort.by("breakName").ascending());
 
@@ -93,10 +95,28 @@ public class BreakPolicyController {
         );
     }
 
-    // ── DELETE (soft)  →  ADMIN ONLY ─────────────────────────────────────────
+    // ── STATS  →  ADMIN + HR
+    //    Global counts unaffected by search / filter / pagination.
+    //    Used by frontend stat cards so they always show consistent totals.
+    @PreAuthorize("hasAnyRole('ADMIN','HR')")
+    @GetMapping("/stats")
+    public ResponseEntity<ApiResponse<BreakPolicyStatsDTO>> getStats() {
+
+        return ResponseEntity.ok(
+                ApiResponse.<BreakPolicyStatsDTO>builder()
+                        .success(true)
+                        .message("Break policy stats fetched successfully")
+                        .data(service.getStats())
+                        .build()
+        );
+    }
+
+    // ── SOFT DELETE  →  ADMIN ONLY
+    //    Sets isActive = false. Record is hidden from listing but retained in the database.
+    //    HR users do NOT have access to this endpoint.
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
-    @Auditable(action = AuditAction.DELETE_BREAK_POLICY, resource = "BreakPolicy", description = "Deactivate break policy")
+    @Auditable(action = AuditAction.DELETE_BREAK_POLICY, resource = "BreakPolicy", description = "Soft-delete break policy")
     public ResponseEntity<ApiResponse<Void>> delete(@PathVariable Long id) {
 
         service.delete(id);
@@ -104,7 +124,7 @@ public class BreakPolicyController {
         return ResponseEntity.ok(
                 ApiResponse.<Void>builder()
                         .success(true)
-                        .message("Break policy deactivated successfully")
+                        .message("Break policy deleted successfully")
                         .build()
         );
     }

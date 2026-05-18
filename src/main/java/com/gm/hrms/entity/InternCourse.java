@@ -5,11 +5,7 @@ import lombok.*;
 
 @Entity
 @Table(name = "intern_courses")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class InternCourse {
 
     @Id
@@ -23,5 +19,9 @@ public class InternCourse {
 
     @Builder.Default
     @Column(nullable = false)
-    private Boolean status = true;
+    private Boolean status = true;       // active / inactive
+
+    @Builder.Default
+    @Column(nullable = false)
+    private Boolean deleted = false;     // soft-delete flag — hidden from listing
 }

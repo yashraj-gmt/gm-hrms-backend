@@ -2,6 +2,7 @@ package com.gm.hrms.service.impl;
 
 import com.gm.hrms.dto.request.BreakPolicyRequestDTO;
 import com.gm.hrms.dto.response.BreakPolicyResponseDTO;
+import com.gm.hrms.dto.response.BreakPolicyStatsDTO;
 import com.gm.hrms.dto.response.PageResponseDTO;
 import com.gm.hrms.entity.BreakPolicy;
 import com.gm.hrms.enums.BreakCategory;
@@ -29,18 +30,22 @@ public class BreakPolicyServiceImpl implements BreakPolicyService {
     @Transactional
     public BreakPolicyResponseDTO create(BreakPolicyRequestDTO dto) {
 
-        if (repository.existsByBreakName(dto.getBreakName())) {
+        // Only block duplicates against non-deleted records
+        if (repository.existsByBreakNameAndIsDeletedFalse(dto.getBreakName())) {
             throw new DuplicateResourceException(
                     "Break policy already exists with name: " + dto.getBreakName());
         }
 
         BreakPolicy entity = BreakPolicyMapper.toEntity(dto);
-        entity.setIsActive(true);   // new policies are active by default
+        entity.setIsActive(true);
+        entity.setIsDeleted(false);   // explicit for clarity
 
         return BreakPolicyMapper.toResponse(repository.save(entity));
     }
 
-    // ── UPDATE (also handles toggle via isActive field) ───────────────────────
+    // ── UPDATE (handles isActive toggle from Edit form) ───────────────────────
+    // No change needed — patchEntity already handles isActive; isDeleted is never
+    // exposed through the request DTO so it cannot be accidentally toggled here.
     @Override
     @Transactional
     public BreakPolicyResponseDTO update(Long id, BreakPolicyRequestDTO dto) {
@@ -66,13 +71,12 @@ public class BreakPolicyServiceImpl implements BreakPolicyService {
         return BreakPolicyMapper.toResponse(entity);
     }
 
-    // ── GET ALL (with search + filters) ──────────────────────────────────────
+    // ── GET ALL ───────────────────────────────────────────────────────────────
     @Override
     @Transactional(readOnly = true)
     public PageResponseDTO<BreakPolicyResponseDTO> getAll(
             String search, BreakCategory category, Boolean isPaid, Pageable pageable) {
 
-        // Treat blank string as null so JPQL skips the filter
         String searchParam = (search == null || search.isBlank()) ? null : search.trim();
 
         Page<BreakPolicy> page = repository.search(searchParam, category, isPaid, pageable);
@@ -93,7 +97,24 @@ public class BreakPolicyServiceImpl implements BreakPolicyService {
                 .build();
     }
 
-    // ── DELETE (soft) ─────────────────────────────────────────────────────────
+    // ── STATS ─────────────────────────────────────────────────────────────────
+    @Override
+    @Transactional(readOnly = true)
+    public BreakPolicyStatsDTO getStats() {
+        long total    = repository.countByIsDeletedFalse();
+        long active   = repository.countByIsDeletedFalseAndIsActiveTrue();
+        long fixed    = repository.countByIsDeletedFalseAndBreakCategory(BreakCategory.FIXED);
+        long flexible = repository.countByIsDeletedFalseAndBreakCategory(BreakCategory.FLEXIBLE);
+
+        return BreakPolicyStatsDTO.builder()
+                .total(total)
+                .active(active)       // ← now correctly counts only isActive=true rows
+                .fixed(fixed)
+                .flexible(flexible)
+                .build();
+    }
+
+    // ── SOFT DELETE ───────────────────────────────────────────────────────────
     @Override
     @Transactional
     public void delete(Long id) {
@@ -102,7 +123,7 @@ public class BreakPolicyServiceImpl implements BreakPolicyService {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Break policy not found with id: " + id));
 
-        entity.setIsActive(false);
+        entity.setIsDeleted(true);    // ← soft-delete flag; isActive is left unchanged
         repository.save(entity);
     }
 }

@@ -26,17 +26,11 @@ public class InternCourseMapper {
      * Only updates status when explicitly provided (non-null) in the DTO.
      */
     public static void patchUpdate(InternCourse entity, InternCourseRequestDTO dto) {
-        if (dto.getName() != null) {
-            entity.setName(dto.getName().trim());
-        }
-        // Allow clearing description by sending empty string
-        if (dto.getDescription() != null) {
-            entity.setDescription(dto.getDescription().trim());
-        }
-        // Only toggle status when explicitly sent
-        if (dto.getStatus() != null) {
-            entity.setStatus(dto.getStatus());
-        }
+        if (dto.getName() != null)        entity.setName(dto.getName().trim());
+        if (dto.getDescription() != null) entity.setDescription(dto.getDescription().trim());
+
+        if (dto.getActive() != null)      entity.setStatus(dto.getActive());
+        else if (dto.getStatus() != null) entity.setStatus(dto.getStatus());
     }
 
     /**

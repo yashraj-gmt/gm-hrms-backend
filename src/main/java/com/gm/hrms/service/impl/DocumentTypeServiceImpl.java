@@ -17,7 +17,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -29,88 +31,79 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
     // ── CREATE ────────────────────────────────────────────────────────────────
     @Override
     public DocumentTypeResponseDTO create(DocumentTypeRequestDTO dto) {
-
         if (repository.existsByNameIgnoreCase(dto.getName()))
             throw new DuplicateResourceException("Document name already exists: " + dto.getName());
-
         if (repository.existsByDocKeyIgnoreCase(dto.getKey()))
             throw new DuplicateResourceException("Document key already exists: " + dto.getKey());
 
         DocumentType entity = DocumentTypeMapper.toEntity(dto);
         repository.save(entity);
-
         return DocumentTypeMapper.toResponse(entity);
     }
 
-    // ── UPDATE / PATCH ────────────────────────────────────────────────────────
+    // ── UPDATE ────────────────────────────────────────────────────────────────
     @Override
     public DocumentTypeResponseDTO update(Long id, DocumentTypeRequestDTO dto) {
-
         DocumentType entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Document type not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Document type not found: " + id));
 
-        // Duplicate check — exclude the current record itself
         if (repository.existsByNameIgnoreCaseAndIdNot(dto.getName(), id))
             throw new DuplicateResourceException("Document name already exists: " + dto.getName());
-
         if (repository.existsByDocKeyIgnoreCaseAndIdNot(dto.getKey(), id))
             throw new DuplicateResourceException("Document key already exists: " + dto.getKey());
 
         DocumentTypeMapper.updateEntity(entity, dto);
         repository.save(entity);
-
         return DocumentTypeMapper.toResponse(entity);
     }
 
-    // ── DELETE (soft) ─────────────────────────────────────────────────────────
+    // ── DELETE (true soft-delete) ─────────────────────────────────────────────
+    // Sets deleted=true + deletedAt. Record disappears from listing
+    // but remains in the DB. @SQLRestriction on the entity auto-hides it.
     @Override
     public void delete(Long id) {
-
         DocumentType entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Document type not found with id: " + id));
-
-        // ── FIX: was missing repository.save() — soft delete was never persisted ──
-        entity.setActive(false);
+                .orElseThrow(() -> new ResourceNotFoundException("Document type not found: " + id));
+        entity.setDeleted(true);
+        entity.setDeletedAt(LocalDateTime.now());
         repository.save(entity);
     }
 
-    // ── GET ALL (active + inactive) ───────────────────────────────────────────
-    // FIX: was findByActiveTrue — now returns ALL records so soft-deleted
-    // (inactive) records still appear in the listing with Inactive status badge
+    // ── GET ALL (non-deleted, active + inactive) ───────────────────────────────
+    // @SQLRestriction("deleted = false") on the entity auto-filters this query.
     @Override
     @Transactional(readOnly = true)
     public PageResponseDTO<DocumentTypeResponseDTO> getAll(Pageable pageable) {
-
-        Page<DocumentType> page = repository.findAll(pageable);
-
-        return buildPageResponse(page);
+        return buildPageResponse(repository.findAll(pageable));
     }
 
     // ── GET BY ID ─────────────────────────────────────────────────────────────
     @Override
     @Transactional(readOnly = true)
     public DocumentTypeResponseDTO getById(Long id) {
-
         DocumentType entity = repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Document type not found with id: " + id));
-
+                .orElseThrow(() -> new ResourceNotFoundException("Document type not found: " + id));
         return DocumentTypeMapper.toResponse(entity);
     }
 
-    // ── FILTER BY APPLICABLE TYPE (active + inactive) ─────────────────────────
-    // FIX: was findByApplicableTypesContainingAndActiveTrue — now returns ALL
+    // ── FILTER BY SINGLE TYPE ─────────────────────────────────────────────────
     @Override
     @Transactional(readOnly = true)
     public PageResponseDTO<DocumentTypeResponseDTO> getByApplicableType(
-            ApplicableType type,
-            Pageable pageable) {
-
-        Page<DocumentType> page = repository.findByApplicableType(type, pageable);
-
-        return buildPageResponse(page);
+            ApplicableType type, Pageable pageable) {
+        return buildPageResponse(repository.findByApplicableType(type, pageable));
     }
 
-    // ── STATS ─────────────────────────────────────────────────────────────────
+    // ── FILTER BY MULTIPLE TYPES ──────────────────────────────────────────────
+    // Returns docs matching ANY of the given types (OR logic).
+    @Override
+    @Transactional(readOnly = true)
+    public PageResponseDTO<DocumentTypeResponseDTO> getByApplicableTypes(
+            Set<ApplicableType> types, Pageable pageable) {
+        return buildPageResponse(repository.findByApplicableTypesIn(types, pageable));
+    }
+
+    // ── STATS (non-deleted only, auto-filtered by @SQLRestriction) ────────────
     @Override
     @Transactional(readOnly = true)
     public DocumentTypeStatsDTO getStats() {
@@ -123,13 +116,12 @@ public class DocumentTypeServiceImpl implements DocumentTypeService {
                 .build();
     }
 
-    // ── Private helpers ───────────────────────────────────────────────────────
+    // ── Private helper ────────────────────────────────────────────────────────
     private PageResponseDTO<DocumentTypeResponseDTO> buildPageResponse(Page<DocumentType> page) {
         List<DocumentTypeResponseDTO> content = page.getContent()
                 .stream()
                 .map(DocumentTypeMapper::toResponse)
                 .toList();
-
         return PageResponseDTO.<DocumentTypeResponseDTO>builder()
                 .content(content)
                 .page(page.getNumber())

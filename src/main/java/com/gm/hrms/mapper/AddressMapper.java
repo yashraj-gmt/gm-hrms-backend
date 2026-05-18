@@ -8,63 +8,40 @@ public class AddressMapper {
 
     private AddressMapper() {}
 
-    // ================= TO ENTITY =================
     public static Address toEntity(AddressRequestDTO dto) {
-
-        if (dto == null) return null; //  safety
-
-        return Address.builder()
-                .addressLine(dto.getAddressLine())
-                .city(dto.getCity())
-                .district(dto.getDistrict())
-                .landmark(dto.getLandmark())
-                .state(dto.getState())
-                .pinCode(dto.getPinCode())
-                .country(dto.getCountry())
-                .build();
+        if (dto == null) return null;
+        Address address = new Address();
+        address.setAddressLine(dto.getAddressLine()); // ← was missing — root cause
+        address.setCity(dto.getCity());
+        address.setDistrict(dto.getDistrict());
+        address.setLandmark(dto.getLandmark());
+        address.setState(dto.getState());
+        address.setPinCode(dto.getPinCode());
+        address.setCountry(dto.getCountry());
+        return address;
     }
 
-    // ================= PATCH =================
-    public static void patchEntity(Address entity, AddressRequestDTO dto) {
-
-        if (entity == null || dto == null) return; //  safety
-
-        if (dto.getAddressLine() != null)
-            entity.setAddressLine(dto.getAddressLine());
-
-        if (dto.getCity() != null)
-            entity.setCity(dto.getCity());
-
-        if (dto.getDistrict() != null)
-            entity.setDistrict(dto.getDistrict());
-
-        if (dto.getLandmark() != null)
-            entity.setLandmark(dto.getLandmark());
-
-        if (dto.getState() != null)
-            entity.setState(dto.getState());
-
-        if (dto.getPinCode() != null)
-            entity.setPinCode(dto.getPinCode());
-
-        if (dto.getCountry() != null)
-            entity.setCountry(dto.getCountry());
+    public static void patchEntity(Address address, AddressRequestDTO dto) {
+        if (address == null || dto == null) return;
+        if (dto.getAddressLine() != null) address.setAddressLine(dto.getAddressLine()); // ← was missing
+        if (dto.getCity()        != null) address.setCity(dto.getCity());
+        if (dto.getDistrict()    != null) address.setDistrict(dto.getDistrict());
+        if (dto.getLandmark()    != null) address.setLandmark(dto.getLandmark());
+        if (dto.getState()       != null) address.setState(dto.getState());
+        if (dto.getPinCode()     != null) address.setPinCode(dto.getPinCode());
+        if (dto.getCountry()     != null) address.setCountry(dto.getCountry());
     }
 
-    // ================= TO RESPONSE =================
-    public static AddressResponseDTO toResponse(Address entity) {
-
-        if (entity == null) return null; //
-
+    public static AddressResponseDTO toResponse(Address address) {
+        if (address == null) return null;
         return AddressResponseDTO.builder()
-                .id(entity.getId())
-                .address(entity.getAddressLine())
-                .city(entity.getCity())
-                .district(entity.getDistrict())
-                .landmark(entity.getLandmark())
-                .state(entity.getState())
-                .pinCode(entity.getPinCode())
-                .country(entity.getCountry())
+                .addressLine(address.getAddressLine())
+                .city(address.getCity())
+                .district(address.getDistrict())
+                .landmark(address.getLandmark())
+                .state(address.getState())
+                .pinCode(address.getPinCode())
+                .country(address.getCountry())
                 .build();
     }
 }
