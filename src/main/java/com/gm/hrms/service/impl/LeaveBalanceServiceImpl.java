@@ -42,6 +42,11 @@ public class LeaveBalanceServiceImpl implements LeaveBalanceService {
 
         int year = LocalDate.now().getYear();
 
+        long existingCount = repository.countByPersonalIdAndYear(personalId, year);
+        if (existingCount >= mappings.size() && !mappings.isEmpty()) {
+            return; // already fully initialized, nothing to do
+        }
+
         List<LeaveBalance> toSave = new ArrayList<>();
 
         for (LeavePolicyLeaveType m : mappings) {

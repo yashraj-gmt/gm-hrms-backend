@@ -11,6 +11,8 @@ import com.gm.hrms.enums.EmploymentType;
 import com.gm.hrms.enums.RecordStatus;
 import com.gm.hrms.exception.InvalidRequestException;
 import com.gm.hrms.exception.ResourceNotFoundException;
+import com.gm.hrms.repository.EmployeeRepository;
+import com.gm.hrms.repository.PersonalInformationContactRepository;
 import com.gm.hrms.repository.UserAuthRepository;
 import com.gm.hrms.service.*;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +36,12 @@ public class UserServiceImpl implements UserService {
     private final ObjectMapper mapper;
     private final FileStorageService fileStorageService;
     private final UserAuthRepository userAuthRepository;
+    private final EmployeeRepository employeeRepository;
+    private final PersonalInformationContactRepository contactRepository;
+
+    // =========================================================================
+    // CREATE
+    // =========================================================================
 
     @Override
     public UserCreateResponseDTO create(
@@ -52,22 +60,22 @@ public class UserServiceImpl implements UserService {
                 mapper.readValue(personalInformationJson, PersonalInformationRequestDTO.class);
 
         InternRequestDTO intern = internJson != null
-                ? mapper.readValue(internJson, InternRequestDTO.class)
-                : null;
+                ? mapper.readValue(internJson, InternRequestDTO.class) : null;
 
         EmployeeRequestDTO employee = employeeJson != null
-                ? mapper.readValue(employeeJson, EmployeeRequestDTO.class)
-                : null;
+                ? mapper.readValue(employeeJson, EmployeeRequestDTO.class) : null;
 
         TraineeRequestDTO trainee = traineeJson != null
-                ? mapper.readValue(traineeJson, TraineeRequestDTO.class)
-                : null;
+                ? mapper.readValue(traineeJson, TraineeRequestDTO.class) : null;
 
         // ================= STATUS =================
 
         boolean isDraft = personalInformation.getStatus() == RecordStatus.DRAFT;
 
         // ================= PROFILE IMAGE =================
+        // FIX: Only enforce "profile image required" for SUBMITTED records.
+        // DRAFT records may be saved without a photo (profileImageUrl will be null,
+        // which is now allowed after removing nullable=false from the entity column).
 
         if (!isDraft && (profileImage == null || profileImage.isEmpty())) {
             throw new InvalidRequestException("Profile image is required");
@@ -77,6 +85,7 @@ public class UserServiceImpl implements UserService {
             String profileImagePath = fileStorageService.save(profileImage);
             personalInformation.setProfileImageUrl(profileImagePath);
         }
+        // For drafts with no photo, profileImageUrl stays null — that is now fine.
 
         // ================= PERSONAL =================
 
@@ -127,6 +136,10 @@ public class UserServiceImpl implements UserService {
         };
     }
 
+    // =========================================================================
+    // ME
+    // =========================================================================
+
     @Override
     public UserProfileResponseDTO getMe(String username) {
         UserAuth auth = userAuthRepository.findByUsername(username)
@@ -136,7 +149,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserProfileResponseDTO updateMe(String username, ProfileUpdateRequestDTO dto) {
-        UserAuth auth   = userAuthRepository.findByUsername(username)
+        UserAuth auth = userAuthRepository.findByUsername(username)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
         PersonalInformation person = auth.getPersonalInformation();
 
@@ -160,6 +173,40 @@ public class UserServiceImpl implements UserService {
         return buildProfileResponse(auth);
     }
 
+    // =========================================================================
+    // UNIQUENESS CHECKS
+    // =========================================================================
+
+    @Override
+    @Transactional(readOnly = true)
+    public boolean isEmailAvailable(String email, String type) {
+        if (email == null || email.isBlank()) return true;
+        String normalized = email.trim().toLowerCase();
+
+        if ("OFFICE".equalsIgnoreCase(type)) {
+            if (contactRepository.existsByOfficeEmailIgnoreCase(normalized)) return false;
+        } else if ("PERSONAL".equalsIgnoreCase(type)) {
+            if (contactRepository.existsByPersonalEmailIgnoreCase(normalized)) return false;
+        } else {
+            // fallback: check both
+            if (contactRepository.existsByOfficeEmailIgnoreCase(normalized))   return false;
+            if (contactRepository.existsByPersonalEmailIgnoreCase(normalized)) return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public boolean isEmployeeCodeAvailable(String code) {
+        if (code == null || code.isBlank()) return true;
+        return !employeeRepository.existsByEmployeeCode(code.trim());
+    }
+
+    // =========================================================================
+    // PRIVATE HELPERS
+    // =========================================================================
+
     private UserProfileResponseDTO buildProfileResponse(UserAuth auth) {
         PersonalInformation p = auth.getPersonalInformation();
         WorkProfile w = p.getWorkProfile();
@@ -180,5 +227,4 @@ public class UserServiceImpl implements UserService {
                 .role(auth.getRole().name())
                 .build();
     }
-
 }

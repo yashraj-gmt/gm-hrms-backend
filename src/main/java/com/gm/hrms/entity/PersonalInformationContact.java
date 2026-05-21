@@ -1,13 +1,18 @@
+
 package com.gm.hrms.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "person_contacts",
+@Table(
+        name = "person_contacts",
         uniqueConstraints = {
-                @UniqueConstraint(columnNames = "personalEmail")
-        })
+                // FIX: use snake_case column names (actual DB column names)
+                @UniqueConstraint(name = "uk_person_contacts_personal_email", columnNames = "personal_email"),
+                @UniqueConstraint(name = "uk_person_contacts_office_email",   columnNames = "office_email")
+        }
+)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,10 +28,10 @@ public class PersonalInformationContact {
 
     private String emergencyPhone;
 
-    @Column(unique = true)
+    @Column(name = "personal_email")
     private String personalEmail;
 
-    @Column(unique = true)
+    @Column(name = "office_email")
     private String officeEmail;
 
     @OneToOne

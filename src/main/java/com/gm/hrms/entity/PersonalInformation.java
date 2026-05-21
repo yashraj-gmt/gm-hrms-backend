@@ -19,26 +19,24 @@ public class PersonalInformation extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // ===== BASIC INFO =====
-
     @Column(nullable = false)
     private String firstName;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String middleName;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String lastName;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Gender gender;
 
     private LocalDate dateOfBirth;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private EmploymentType employmentType; // EMPLOYEE / INTERN / TRAINEE
+    private EmploymentType employmentType;
 
     @Column(nullable = false)
     private Boolean active = true;
@@ -46,15 +44,13 @@ public class PersonalInformation extends BaseEntity {
     // ===== MARITAL =====
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(nullable = true)
     private MaritalStatus maritalStatus;
-
-    @Column(nullable = false)
+    
+    @Column(nullable = true)
     private String spouseOrParentName;
 
-    // ===== PROFILE =====
-
-    @Column(nullable = false)
+    @Column(name = "profile_image_url")
     private String profileImageUrl;
 
     // ===== CONTACT =====
@@ -87,8 +83,7 @@ public class PersonalInformation extends BaseEntity {
     private Address permanentAddress;
 
     @Enumerated(EnumType.STRING)
-    private RecordStatus recordStatus; // DRAFT / SUBMITTED
-
+    private RecordStatus recordStatus;
 
     @OneToOne(mappedBy = "personalInformation", fetch = FetchType.LAZY)
     private Employee employee;
@@ -98,5 +93,4 @@ public class PersonalInformation extends BaseEntity {
 
     @OneToOne(mappedBy = "personalInformation", fetch = FetchType.LAZY)
     private Trainee trainee;
-
 }

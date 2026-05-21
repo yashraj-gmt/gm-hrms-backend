@@ -1,5 +1,7 @@
 package com.gm.hrms.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gm.hrms.audit.Auditable;
 import com.gm.hrms.audit.AuditAction;
 import com.gm.hrms.dto.request.EmployeeStatusUpdateDTO;
@@ -25,26 +27,11 @@ import java.util.Map;
 public class EmployeeController {
 
     private final EmployeeService service;
+    private final ObjectMapper mapper;
 
     // =========================================================================
     // GET ALL  —  paginated, filtered, sorted
     // =========================================================================
-    /**
-     * GET /api/employees
-     *
-     * Query params:
-     *   page            (default 0)
-     *   size            (default 10)
-     *   search          free text (name/email/code)
-     *   status          ACTIVE | INACTIVE | ON_HOLD
-     *   employmentType  EMPLOYEE | INTERN | TRAINEE
-     *   department      department name
-     *   dateFrom        ISO date  e.g. 2024-01-01
-     *   dateTo          ISO date  e.g. 2024-12-31
-     *   sortBy          id | name | joiningDate   (default: id)
-     *   sortDir         asc | desc                (default: asc)
-     *   recordStatus    SUBMITTED | DRAFT         (default: SUBMITTED)
-     */
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @GetMapping
     public ResponseEntity<ApiResponse<EmployeeListResponseDTO>> getAll(
@@ -94,11 +81,22 @@ public class EmployeeController {
     @Auditable(action = AuditAction.UPDATE_EMPLOYEE, resource = "Employee", description = "Update employee record")
     public ResponseEntity<ApiResponse<EmployeeResponseDTO>> update(
             @PathVariable Long id,
-            @RequestParam("employee")                          String                      employeeJson,
-            @RequestParam(required = false)                    MultipartFile               profileImage,
-            @RequestParam(required = false)                    Map<String, MultipartFile>  documents,
-            @RequestParam(required = false)                    Map<String, String>         reasons
+            @RequestParam("employee")                                        String                     employeeJson,
+            @RequestParam(required = false)                                  MultipartFile              profileImage,
+            @RequestParam(required = false)                                  Map<String, MultipartFile> documents,
+            @RequestParam(value = "reasons", required = false)               String                     reasonsJson  // ← was Map<String,String>
     ) throws Exception {
+
+        // Parse reasons JSON string → Map  (mirrors UserController.create)
+        Map<String, String> reasons = null;
+        if (reasonsJson != null && !reasonsJson.isBlank()) {
+            try {
+                reasons = mapper.readValue(reasonsJson,
+                        new TypeReference<Map<String, String>>() {});
+            } catch (Exception ignored) {
+                reasons = null;
+            }
+        }
 
         return ResponseEntity.ok(ApiResponse.<EmployeeResponseDTO>builder()
                 .success(true)
@@ -106,6 +104,7 @@ public class EmployeeController {
                 .data(service.update(id, employeeJson, profileImage, documents, reasons))
                 .build());
     }
+
 
     // =========================================================================
     // STATUS UPDATE  —  HR + ADMIN

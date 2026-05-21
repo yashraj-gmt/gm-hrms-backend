@@ -25,7 +25,7 @@ import java.util.List;
 public class PersonalInformationServiceImpl implements PersonalInformationService {
 
     private final PersonalInformationRepository personalInformationRepository;
-    private final PersonContactRepository contactRepository;
+    private final PersonalInformationContactRepository contactRepository;
     private final BankDetailsService bankDetailsService;
     private final AddressRepository addressRepository;
     private final WorkProfileService workProfileService;

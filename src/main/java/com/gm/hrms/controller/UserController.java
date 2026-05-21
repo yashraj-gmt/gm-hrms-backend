@@ -1,5 +1,6 @@
 package com.gm.hrms.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gm.hrms.audit.Auditable;
 import com.gm.hrms.audit.AuditAction;
 import com.gm.hrms.dto.request.ProfileUpdateRequestDTO;
@@ -23,6 +24,7 @@ import java.util.Map;
 public class UserController {
 
     private final UserService userService;
+    private final ObjectMapper mapper;
 
     // ================= CREATE =================
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -39,17 +41,23 @@ public class UserController {
             @RequestParam(value = "trainee",   required = false) String traineeJson,
             @RequestParam(value = "profileImage", required = false) MultipartFile profileImage,
             @RequestParam(required = false) Map<String, MultipartFile> documents,
-            @RequestParam(required = false) Map<String, String> reasons
+            @RequestParam(value = "reasons", required = false) String reasonsJson   // ← String, not Map
     ) throws Exception {
+
+        Map<String, String> reasons = null;
+        if (reasonsJson != null && !reasonsJson.isBlank()) {
+            try {
+                reasons = mapper.readValue(reasonsJson,
+                        new com.fasterxml.jackson.core.type.TypeReference<Map<String, String>>() {});
+            } catch (Exception ignored) {
+                reasons = null;
+            }
+        }
 
         Object response = userService.create(
                 personalInformationJson,
-                internJson,
-                employeeJson,
-                traineeJson,
-                profileImage,
-                documents,
-                reasons
+                internJson, employeeJson, traineeJson,
+                profileImage, documents, reasons
         );
 
         return ResponseEntity.ok(
@@ -61,7 +69,7 @@ public class UserController {
         );
     }
 
-    // Add to UserController.java
+    // ================= ME =================
 
     @GetMapping("/me")
     @PreAuthorize("isAuthenticated()")
@@ -103,6 +111,48 @@ public class UserController {
                         .success(true)
                         .message("Avatar updated")
                         .data(userService.updateAvatar(principal.getUsername(), profileImage))
+                        .build()
+        );
+    }
+
+    // ================= UNIQUENESS CHECKS (used by AddEmployee form) =================
+
+    /**
+     * GET /api/users/check-email?email=xxx&type=OFFICE|PERSONAL
+     * Returns { available: true } if the email is not yet taken, { available: false } otherwise.
+     * Used for real-time uniqueness validation in the Add Employee / Add Intern / Add Trainee forms.
+     */
+    @GetMapping("/check-email")
+    @PreAuthorize("hasAnyRole('ADMIN','HR')")
+    public ResponseEntity<ApiResponse<Map<String, Boolean>>> checkEmail(
+            @RequestParam String email,
+            @RequestParam(defaultValue = "OFFICE") String type) {
+
+        boolean available = userService.isEmailAvailable(email, type);
+        return ResponseEntity.ok(
+                ApiResponse.<Map<String, Boolean>>builder()
+                        .success(true)
+                        .message("Email availability checked")
+                        .data(Map.of("available", available))
+                        .build()
+        );
+    }
+
+    /**
+     * GET /api/users/check-employee-code?code=GMEP001
+     * Returns { available: true } if the employee code is not yet taken.
+     */
+    @GetMapping("/check-employee-code")
+    @PreAuthorize("hasAnyRole('ADMIN','HR')")
+    public ResponseEntity<ApiResponse<Map<String, Boolean>>> checkEmployeeCode(
+            @RequestParam String code) {
+
+        boolean available = userService.isEmployeeCodeAvailable(code);
+        return ResponseEntity.ok(
+                ApiResponse.<Map<String, Boolean>>builder()
+                        .success(true)
+                        .message("Employee code availability checked")
+                        .data(Map.of("available", available))
                         .build()
         );
     }

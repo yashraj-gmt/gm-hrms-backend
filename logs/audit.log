@@ -1,53 +1,14 @@
-2026-05-18 10:03:24.916 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=174ms | DESC=Access token refresh | ERROR=Refresh token not found
-2026-05-18 10:05:32.140 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=196ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
-2026-05-18 10:05:33.537 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=82ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
-2026-05-18 10:05:41.203 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=665ms | DESC=User login attempt | ERROR=-
-2026-05-18 10:27:18.554 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=501ms | DESC=Access token refresh | ERROR=-
-2026-05-18 10:27:31.920 [AUDIT] ACTION=UPDATE_BRANCH | RESOURCE=Branch | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=34ms | DESC=Update branch details | ERROR=-
-2026-05-18 10:28:36.086 [AUDIT] ACTION=UPDATE_BRANCH | RESOURCE=Branch | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=16ms | DESC=Update branch details | ERROR=-
-2026-05-18 10:35:47.605 [AUDIT] ACTION=CREATE_BRANCH | RESOURCE=Branch | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=44ms | DESC=Create new branch | ERROR=-
-2026-05-18 10:35:57.285 [AUDIT] ACTION=DELETE_BRANCH | RESOURCE=Branch | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=31ms | DESC=Deactivate branch | ERROR=-
-2026-05-18 10:38:58.950 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=445ms | DESC=User login attempt | ERROR=-
-2026-05-18 11:49:38.320 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=160ms | DESC=Access token refresh | ERROR=-
-2026-05-18 11:58:16.955 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=55ms | DESC=Access token refresh | ERROR=-
-2026-05-18 12:13:36.369 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=328ms | DESC=Access token refresh | ERROR=-
-2026-05-18 12:24:12.451 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=117ms | DESC=Access token refresh | ERROR=-
-2026-05-18 12:39:31.538 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=352ms | DESC=Access token refresh | ERROR=-
-2026-05-18 12:39:37.399 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=48ms | DESC=Access token refresh | ERROR=-
-2026-05-18 12:52:25.733 [AUDIT] ACTION=UPDATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=33ms | DESC=Update break policy | ERROR=-
-2026-05-18 12:53:24.350 [AUDIT] ACTION=UPDATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=17ms | DESC=Update break policy | ERROR=-
-2026-05-18 12:54:09.400 [AUDIT] ACTION=CREATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=0ms | DESC=Create break policy | ERROR=-
-2026-05-18 12:56:03.124 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=196ms | DESC=Access token refresh | ERROR=-
-2026-05-18 12:56:03.167 [AUDIT] ACTION=UPDATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=0ms | DESC=Update break policy | ERROR=-
-2026-05-18 12:56:11.300 [AUDIT] ACTION=DELETE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=11ms | DESC=Deactivate break policy | ERROR=-
-2026-05-18 13:13:34.151 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=92ms | DESC=Access token refresh | ERROR=-
-2026-05-18 14:11:33.232 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=94ms | DESC=Access token refresh | ERROR=-
-2026-05-18 14:11:34.195 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=95ms | DESC=Access token refresh | ERROR=-
-2026-05-18 14:42:17.880 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=57ms | DESC=Access token refresh | ERROR=-
-2026-05-18 14:42:17.952 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=105ms | DESC=Access token refresh | ERROR=-
-2026-05-18 14:50:37.011 [AUDIT] ACTION=UPDATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=69ms | DESC=Update break policy | ERROR=-
-2026-05-18 14:57:27.048 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=213ms | DESC=Access token refresh | ERROR=-
-2026-05-18 14:57:27.048 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=213ms | DESC=Access token refresh | ERROR=-
-2026-05-18 14:59:15.086 [AUDIT] ACTION=CREATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=22ms | DESC=Create break policy | ERROR=Break policy already exists with name: Demo
-2026-05-18 14:59:23.309 [AUDIT] ACTION=CREATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=19ms | DESC=Create break policy | ERROR=-
-2026-05-18 15:59:08.984 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=105ms | DESC=Access token refresh | ERROR=-
-2026-05-18 15:59:09.106 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=70ms | DESC=Access token refresh | ERROR=-
-2026-05-18 16:16:02.913 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=79ms | DESC=Access token refresh | ERROR=-
-2026-05-18 16:16:02.924 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=74ms | DESC=Access token refresh | ERROR=-
-2026-05-18 16:19:50.750 [AUDIT] ACTION=UPDATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=92ms | DESC=Update break policy | ERROR=-
-2026-05-18 16:30:01.102 [AUDIT] ACTION=DELETE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=100ms | DESC=Soft-delete break policy | ERROR=-
-2026-05-18 16:30:07.552 [AUDIT] ACTION=UPDATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=0ms | DESC=Update break policy | ERROR=-
-2026-05-18 16:30:13.535 [AUDIT] ACTION=UPDATE_BREAK_POLICY | RESOURCE=BreakPolicy | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=0ms | DESC=Update break policy | ERROR=-
-2026-05-18 16:32:40.101 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=169ms | DESC=Access token refresh | ERROR=-
-2026-05-18 16:32:40.153 [AUDIT] ACTION=UPDATE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=7ms | DESC=Update holiday — affects org-wide leave calendar | ERROR=-
-2026-05-18 16:45:37.974 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=147ms | DESC=Access token refresh | ERROR=-
-2026-05-18 16:49:32.420 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=56ms | DESC=Access token refresh | ERROR=-
-2026-05-18 16:49:32.503 [AUDIT] ACTION=CREATE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=34ms | DESC=Create holiday — affects org-wide leave calendar | ERROR=-
-2026-05-18 16:49:42.820 [AUDIT] ACTION=DELETE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=21ms | DESC=Delete holiday | ERROR=-
-2026-05-18 16:49:50.196 [AUDIT] ACTION=DELETE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=11ms | DESC=Delete holiday | ERROR=-
-2026-05-18 17:05:07.987 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=109ms | DESC=Access token refresh | ERROR=-
-2026-05-18 17:05:07.988 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=105ms | DESC=Access token refresh | ERROR=-
-2026-05-18 17:09:18.036 [AUDIT] ACTION=DELETE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=116ms | DESC=Soft-delete holiday | ERROR=-
-2026-05-18 17:12:01.451 [AUDIT] ACTION=UPDATE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=8ms | DESC=Update holiday | ERROR=-
-2026-05-18 17:12:30.468 [AUDIT] ACTION=UPDATE_HOLIDAY | RESOURCE=Holiday | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=25ms | DESC=Update holiday | ERROR=-
-2026-05-18 17:51:26.956 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=343ms | DESC=Access token refresh | ERROR=-
+2026-05-20 12:33:03.519 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=1733ms | DESC=Access token refresh | ERROR=-
+2026-05-20 12:33:12.138 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=800ms | DESC=User login attempt | ERROR=-
+2026-05-20 12:35:15.822 [AUDIT] ACTION=CREATE_USER | RESOURCE=User | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=567ms | DESC=Create full user profile (person + role + auth credentials) | ERROR=Aadhaar Card is mandatory. Upload document or provide reason.
+2026-05-20 12:39:27.296 [AUDIT] ACTION=CREATE_USER | RESOURCE=User | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=171ms | DESC=Create full user profile (person + role + auth credentials) | ERROR=Aadhaar Card is mandatory. Upload document or provide reason.
+2026-05-20 12:41:44.863 [AUDIT] ACTION=CREATE_USER | RESOURCE=User | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=384ms | DESC=Create full user profile (person + role + auth credentials) | ERROR=-
+2026-05-20 12:42:58.255 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=97ms | DESC=User login attempt | ERROR=-
+2026-05-20 12:43:47.482 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=98ms | DESC=User login attempt | ERROR=-
+2026-05-20 12:57:43.862 [AUDIT] ACTION=CREATE_USER | RESOURCE=User | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=580ms | DESC=Create full user profile (person + role + auth credentials) | ERROR=-
+2026-05-20 13:00:39.828 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=26ms | DESC=Access token refresh | ERROR=-
+2026-05-20 13:00:43.713 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=70ms | DESC=View employee record | ERROR=-
+2026-05-20 13:00:43.770 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=27ms | DESC=View employee record | ERROR=-
+2026-05-20 13:16:57.589 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=40ms | DESC=Access token refresh | ERROR=-
+2026-05-20 14:01:03.609 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=63ms | DESC=Access token refresh | ERROR=-
+2026-05-20 14:23:04.536 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=31ms | DESC=Access token refresh | ERROR=-

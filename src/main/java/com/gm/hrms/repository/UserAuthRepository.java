@@ -15,4 +15,6 @@ public interface UserAuthRepository extends JpaRepository<UserAuth, Long> {
 
     boolean existsByPersonalInformation(PersonalInformation personalInformation);
 
+    boolean existsByUsernameIgnoreCase(String username);
+
 }

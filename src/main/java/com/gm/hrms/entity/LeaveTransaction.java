@@ -23,7 +23,7 @@ public class LeaveTransaction extends BaseEntity {
     @JoinColumn(name = "personal_id", nullable = false)
     private PersonalInformation personal;
 
-    // 🔥 RELATIONS
+    // 🔥RELATIONS
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "leave_balance_id", nullable = false)
     private LeaveBalance leaveBalance;

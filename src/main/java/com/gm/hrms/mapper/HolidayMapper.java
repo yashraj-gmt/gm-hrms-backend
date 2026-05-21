@@ -36,7 +36,7 @@ public class HolidayMapper {
                 .holidayType(entity.getHolidayType())
                 .description(entity.getDescription())
                 .isOptional(entity.getIsOptional())
-                .isActive(entity.getIsActive())        // ← was missing
+                .isActive(entity.getIsActive())
                 .build();
     }
 }

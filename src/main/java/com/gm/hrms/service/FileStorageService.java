@@ -83,7 +83,6 @@ public class FileStorageService {
 
     // ─── Helpers ──────────────────────────────────────────────────────────────
 
-    /** Strip path-traversal characters from the original filename. */
     private String sanitiseFilename(String name) {
         if (name == null || name.isBlank()) return "file";
         // Keep only the last segment (strip any directory prefix the browser might send)
@@ -92,7 +91,6 @@ public class FileStorageService {
         return base.replaceAll("[^a-zA-Z0-9._-]", "_");
     }
 
-    /** Prevent path-traversal in category names. */
     private String sanitise(String category) {
         if (category == null || category.isBlank()) return "general";
         return category.replaceAll("[^a-zA-Z0-9_-]", "_").toLowerCase();

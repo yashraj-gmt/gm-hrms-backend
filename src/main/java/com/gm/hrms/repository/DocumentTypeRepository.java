@@ -21,34 +21,47 @@ public interface DocumentTypeRepository extends JpaRepository<DocumentType, Long
 
     Optional<DocumentType> findByDocKey(String docKey);
 
-    // @SQLRestriction auto-applies "deleted = false" to all queries below
+    // @SQLRestriction("deleted = false") auto-applies to ALL queries below
 
     Page<DocumentType> findAll(Pageable pageable);
 
     /**
-     * Filter by a single applicable type.
-     * Kept for backward compatibility with the /type/{type} endpoint.
+     * FIX: Filter by a single applicable type AND active=true.
+     * Previously returned inactive docs and docs belonging to other types
+     * because the query lacked the active check.
+     *
+     * The @SQLRestriction already excludes deleted=true rows, so we only
+     * need to add "AND d.active = true" here.
      */
     @Query("""
         SELECT d FROM DocumentType d
         WHERE :type MEMBER OF d.applicableTypes
+          AND d.active = true
         """)
     Page<DocumentType> findByApplicableType(
             @Param("type") ApplicableType type,
             Pageable pageable
     );
 
+    /**
+     * FIX: Filter by multiple applicable types AND active=true.
+     */
     @Query("""
         SELECT DISTINCT d FROM DocumentType d
         WHERE EXISTS (
             SELECT t FROM d.applicableTypes t WHERE t IN :types
         )
+        AND d.active = true
         """)
     Page<DocumentType> findByApplicableTypesIn(
             @Param("types") Set<ApplicableType> types,
             Pageable pageable
     );
 
+    /**
+     * Used by PersonalDocumentService to get required documents for validation.
+     * FIX: Already filters by active=true — this is correct. Keep as-is.
+     */
     List<DocumentType> findByApplicableTypesContainingAndActiveTrue(ApplicableType applicableType);
 
     // Stats — @SQLRestriction ensures deleted records are excluded automatically
