@@ -64,13 +64,14 @@ public class EmployeeController {
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @GetMapping("/{id}")
     @Auditable(action = AuditAction.VIEW_EMPLOYEE, resource = "Employee", description = "View employee record")
-    public ResponseEntity<ApiResponse<EmployeeResponseDTO>> getById(@PathVariable Long id) {
-
-        return ResponseEntity.ok(ApiResponse.<EmployeeResponseDTO>builder()
-                .success(true)
-                .message("Employee fetched successfully")
-                .data(service.getById(id))
-                .build());
+    public ResponseEntity<ApiResponse<Object>> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(
+                ApiResponse.<Object>builder()
+                        .success(true)
+                        .message("Employee fetched")
+                        .data(service.getById(id))
+                        .build()
+        );
     }
 
     // =========================================================================

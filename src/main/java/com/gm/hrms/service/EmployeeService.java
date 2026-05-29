@@ -23,7 +23,7 @@ public interface EmployeeService {
             Map<String, String> reasons
     ) throws Exception;
 
-    EmployeeResponseDTO getById(Long id);
+    Object getById(Long personalInformationId);
 
     EmployeeListResponseDTO getAll(
             int    page,

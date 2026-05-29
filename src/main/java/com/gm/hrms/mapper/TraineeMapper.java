@@ -2,6 +2,8 @@ package com.gm.hrms.mapper;
 
 import com.gm.hrms.dto.response.*;
 import com.gm.hrms.entity.*;
+import com.gm.hrms.enums.WorkMode;
+import com.gm.hrms.enums.WorkingType;
 
 public class TraineeMapper {
 
@@ -24,13 +26,17 @@ public class TraineeMapper {
             BaseUserMapper.mapCommon(dto, p);
         }
 
-//        if (wp != null) {
-//            dto.setBranchName(wp.getBranch() != null ? wp.getBranch().getBranchName() : null);
-//            dto.setShiftTiming(wp.getShift() != null ? wp.getShift().getShiftName() : null);
-//            dto.setWorkMode(wp.getWorkMode());
-//            dto.setWorkingType(wp.getWorkingType());
-//        }
+        if (wp != null) {
+            dto.setBranchName(wp.getBranch() != null ? wp.getBranch().getBranchName() : null);
+            dto.setShiftTiming(wp.getShift() != null ? wp.getShift().getShiftName() : null);
+            dto.setWorkMode(wp.getWorkMode());
 
+            dto.setWorkingType(wp.getWorkingType());
+        }
+
+//        dto.setReportingManagerName(wp != null && wp.getReportingManager() != null
+//                ? wp.getReportingManager().getFirstName() + " " + wp.getReportingManager().getLastName()
+//                : null);
         dto.setTrainingDetails(mapTraining(t.getTrainingDetails(), wp));
         dto.setEducationDetails(mapEducation(t.getEducationDetails()));
         dto.setMentorDetails(mapMentor(t.getMentorDetails()));

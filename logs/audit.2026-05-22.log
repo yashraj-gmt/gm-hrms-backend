@@ -1,0 +1,12 @@
+2026-05-22 11:18:06.155 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=401ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-05-22 11:18:10.855 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=300ms | DESC=User login attempt | ERROR=-
+2026-05-22 11:50:15.011 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=87ms | DESC=Access token refresh | ERROR=-
+2026-05-22 11:50:17.805 [AUDIT] ACTION=CREATE_USER | RESOURCE=User | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=702ms | DESC=Create full user profile (person + role + auth credentials) | ERROR=-
+2026-05-22 12:22:26.498 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=127ms | DESC=Access token refresh | ERROR=-
+2026-05-22 12:26:05.903 [AUDIT] ACTION=CREATE_USER | RESOURCE=User | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=31ms | DESC=Create full user profile (person + role + auth credentials) | ERROR=Department is required
+2026-05-22 13:04:43.468 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=88ms | DESC=Access token refresh | ERROR=-
+2026-05-22 14:01:24.864 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=40ms | DESC=Access token refresh | ERROR=-
+2026-05-22 14:27:34.090 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=167ms | DESC=Access token refresh | ERROR=-
+2026-05-22 14:48:26.514 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=90ms | DESC=Access token refresh | ERROR=-
+2026-05-22 16:19:10.783 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=160ms | DESC=Access token refresh | ERROR=-
+2026-05-22 17:54:34.300 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=111ms | DESC=Access token refresh | ERROR=-

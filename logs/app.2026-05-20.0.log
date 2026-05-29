@@ -1,0 +1,24 @@
+2026-05-20 09:51:22.921 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Starting GMHrmsApplication using Java 21.0.7 with PID 87168 (D:\Projects\GM HRMS\gm-hrms-backend\target\classes started by G M TECHNOSYS in D:\Projects\GM HRMS\gm-hrms-backend)
+2026-05-20 09:51:22.927 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - The following 1 profile is active: "dev"
+2026-05-20 09:51:27.437 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-20 09:51:31.469 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-20 09:51:33.644 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-20 09:51:33.746 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-20 09:51:34.087 INFO  [restartedMain] c.g.h.r.s.i.JasperPayslipReportService - Payslip JRXML compiled and cached successfully from 'reports/payslip.jrxml'.
+2026-05-20 09:51:34.341 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-20 09:51:35.131 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Started GMHrmsApplication in 12.907 seconds (process running for 13.872)
+2026-05-20 12:35:15.853 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Aadhaar Card is mandatory. Upload document or provide reason.]
+2026-05-20 12:39:27.313 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Aadhaar Card is mandatory. Upload document or provide reason.]
+2026-05-20 12:41:50.466 INFO  [email-2] c.g.h.service.impl.EmailServiceImpl - Email sent → ankit.gmtechnosys@gmail.com [GM HRMS - Your Login Credentials]
+2026-05-20 12:41:50.726 INFO  [email-1] c.g.h.service.impl.EmailServiceImpl - Email sent → ankit.gmtechnosys@gmail.com [GM HRMS - Your Login Credentials]
+2026-05-20 12:43:00.849 WARN  [http-nio-8080-exec-3] c.g.h.e.GlobalExceptionHandler - Resource not found: No attendance record found for today.
+2026-05-20 12:43:00.857 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.ResourceNotFoundException: No attendance record found for today.]
+2026-05-20 12:43:00.877 WARN  [http-nio-8080-exec-5] c.g.h.e.GlobalExceptionHandler - Resource not found: No attendance record found for today.
+2026-05-20 12:43:00.878 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.ResourceNotFoundException: No attendance record found for today.]
+2026-05-20 12:43:10.257 WARN  [http-nio-8080-exec-2] c.g.h.e.GlobalExceptionHandler - Resource not found: No attendance record found for today.
+2026-05-20 12:43:10.259 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.ResourceNotFoundException: No attendance record found for today.]
+2026-05-20 12:43:10.279 WARN  [http-nio-8080-exec-10] c.g.h.e.GlobalExceptionHandler - Resource not found: No attendance record found for today.
+2026-05-20 12:43:10.282 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.ResourceNotFoundException: No attendance record found for today.]
+2026-05-20 12:57:49.282 INFO  [email-3] c.g.h.service.impl.EmailServiceImpl - Email sent → wodir@mailinator.com [GM HRMS - Your Login Credentials]
+2026-05-20 12:57:49.589 INFO  [email-4] c.g.h.service.impl.EmailServiceImpl - Email sent → wodir@mailinator.com [GM HRMS - Your Login Credentials]
+2026-05-20 14:01:02.068 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m29s153ms55µs300ns).

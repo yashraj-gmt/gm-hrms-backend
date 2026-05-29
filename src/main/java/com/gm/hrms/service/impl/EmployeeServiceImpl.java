@@ -14,6 +14,8 @@ import com.gm.hrms.enums.Status;
 import com.gm.hrms.exception.InvalidRequestException;
 import com.gm.hrms.exception.ResourceNotFoundException;
 import com.gm.hrms.mapper.EmployeeMapper;
+import com.gm.hrms.mapper.InternMapper;
+import com.gm.hrms.mapper.TraineeMapper;
 import com.gm.hrms.repository.*;
 import com.gm.hrms.service.*;
 import com.gm.hrms.specification.PersonalInformationSpecification;
@@ -346,12 +348,34 @@ public class EmployeeServiceImpl implements EmployeeService {
     // GET BY ID
     // =========================================================================
 
+    // ✅ FIX: resolve by personalInformationId, dispatch by employmentType
     @Override
     @Transactional(readOnly = true)
-    public EmployeeResponseDTO getById(Long id) {
-        return employeeRepository.findById(id)
-                .map(EmployeeMapper::toResponse)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
+    public Object getById(Long personalInformationId) {
+
+        PersonalInformation pi = personalInformationRepository.findById(personalInformationId)
+                .orElseThrow(() -> new ResourceNotFoundException("Person not found"));
+
+        return switch (pi.getEmploymentType()) {
+
+            case EMPLOYEE -> {
+                Employee emp = employeeRepository.findByPersonalInformationId(personalInformationId)
+                        .orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
+                yield EmployeeMapper.toResponse(emp);
+            }
+
+            case TRAINEE -> {
+                Trainee trainee = traineeRepository.findByPersonalInformationId(personalInformationId)
+                        .orElseThrow(() -> new ResourceNotFoundException("Trainee not found"));
+                yield TraineeMapper.toResponse(trainee);
+            }
+
+            case INTERN -> {
+                Intern intern = internRepository.findByPersonalInformationId(personalInformationId)
+                        .orElseThrow(() -> new ResourceNotFoundException("Intern not found"));
+                yield InternMapper.toResponse(intern);
+            }
+        };
     }
 
     // =========================================================================
@@ -452,7 +476,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 + pi.getLastName()).trim();
 
         String email = (ct != null && ct.getOfficeEmail()  != null) ? ct.getOfficeEmail()
-                : (ct != null                                   ? ct.getPersonalEmail() : null);
+                : (ct != null ? ct.getPersonalEmail() : null);
         String phone = ct != null ? ct.getPersonalPhone() : null;
 
         String deptName  = (wp != null && wp.getDepartment()  != null) ? wp.getDepartment().getName()   : null;
@@ -460,24 +484,23 @@ public class EmployeeServiceImpl implements EmployeeService {
         String brName    = (wp != null && wp.getBranch()      != null) ? wp.getBranch().getBranchName() : null;
         String statusStr = (wp != null && wp.getStatus()      != null) ? wp.getStatus().name()          : null;
 
-        // ── Resolve type-specific ID and code via lazy back-references ────────────
-        Long   entityId = pi.getId();   // PI id as safe fallback
+        // ✅ FIX: Always use personalInformationId as the list item id.
+        // This is the universal key passed in the URL (/employee/:id, /trainee/:id).
+        // getById() will resolve by personalInformationId for all employment types.
+        Long   entityId = pi.getId();   // ← always personalInformationId, no branching
         String code     = null;
 
         EmploymentType type = pi.getEmploymentType();
         if (type == EmploymentType.EMPLOYEE && pi.getEmployee() != null) {
-            entityId = pi.getEmployee().getId();
-            code     = pi.getEmployee().getEmployeeCode();
+            code = pi.getEmployee().getEmployeeCode();
         } else if (type == EmploymentType.INTERN && pi.getIntern() != null) {
-            entityId = pi.getIntern().getId();
-            code     = pi.getIntern().getInternCode();
+            code = pi.getIntern().getInternCode();
         } else if (type == EmploymentType.TRAINEE && pi.getTrainee() != null) {
-            entityId = pi.getTrainee().getId();
-            code     = pi.getTrainee().getTraineeCode();
+            code = pi.getTrainee().getTraineeCode();
         }
 
         return EmployeeListItemDTO.builder()
-                .id(entityId)
+                .id(entityId)               // ← personalInformationId
                 .employeeCode(code)
                 .fullName(fullName)
                 .profileImageUrl(pi.getProfileImageUrl())

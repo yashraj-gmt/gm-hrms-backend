@@ -30,7 +30,7 @@ public class SecurityConfig {
             AuthenticationProvider authenticationProvider,
             CustomAuthEntryPoint customAuthEntryPoint,
             CustomAccessDeniedHandler customAccessDeniedHandler,
-            CorsConfigurationSource corsConfigurationSource          // ← from CorsConfig
+            CorsConfigurationSource corsConfigurationSource
     ) throws Exception {
 
         http
@@ -43,9 +43,9 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/api/auth/login",
                                 "/api/auth/refresh",
-                                "/api/auth/forgot-password",   // ← WAS MISSING
-                                "/api/auth/verify-otp",        // ← WAS MISSING
-                                "/api/auth/reset-password"     // ← WAS MISSING
+                                "/api/auth/forgot-password",
+                                "/api/auth/verify-otp",
+                                "/api/auth/reset-password"
                         ).permitAll()
 
                         // ── Protected auth endpoints ──────────────────────────
@@ -82,16 +82,6 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-//        @Bean
-//    public CommandLineRunner run(PasswordEncoder encoder) {
-//        return args -> {
-//            String password = "GMT@123";
-//            String hash = encoder.encode(password);
-//
-//            System.out.println("Generated Hash: " + hash);
-//        };
-//    }
 
 
     @Bean
