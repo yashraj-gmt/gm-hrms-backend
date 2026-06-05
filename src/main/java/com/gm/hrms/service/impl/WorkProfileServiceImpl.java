@@ -39,34 +39,35 @@ public class WorkProfileServiceImpl implements WorkProfileService {
 
         // ================= REQUIRED VALIDATION (ONLY SUBMIT) =================
 
+        // ── In create() ─────────────────────────────────────────────────────────────
         if (!isDraft) {
 
-            if (dto.getDepartmentId() == null) {
+            if (dto.getDepartmentId() == null)
                 throw new InvalidRequestException("Department is required");
-            }
 
-            if (dto.getDesignationId() == null) {
+            if (dto.getDesignationId() == null)
                 throw new InvalidRequestException("Designation is required");
-            }
 
-            if (dto.getBranchId() == null) {
+            if (dto.getBranchId() == null)
                 throw new InvalidRequestException("Branch is required");
-            }
 
-            if (dto.getShiftId() == null) {
+            if (dto.getShiftId() == null)
                 throw new InvalidRequestException("Shift is required");
-            }
 
-            if (dto.getWorkMode() == null) {
-                throw new InvalidRequestException("Work mode is required");
-            }
-
-            if (dto.getWorkingType() == null) {
-                throw new InvalidRequestException("Working type is required");
-            }
-
-            if (dto.getStatus() == null) {
+            if (dto.getStatus() == null)
                 throw new InvalidRequestException("Status is required");
+
+            // ✅ FIX: workMode and workingType are only required for EMPLOYEE and TRAINEE.
+            // INTERN work profile does not capture these — they come from InternInternshipDetails.
+            boolean requiresWorkSettings =
+                    person.getEmploymentType() != com.gm.hrms.enums.EmploymentType.INTERN;
+
+            if (requiresWorkSettings) {
+                if (dto.getWorkMode() == null)
+                    throw new InvalidRequestException("Work mode is required");
+
+                if (dto.getWorkingType() == null)
+                    throw new InvalidRequestException("Working type is required");
             }
         }
 
@@ -153,17 +154,27 @@ public class WorkProfileServiceImpl implements WorkProfileService {
                     ? dto.getShiftId()
                     : (entity.getShift() != null ? entity.getShift().getId() : null);
 
-            var workMode = dto.getWorkMode() != null
-                    ? dto.getWorkMode()
-                    : entity.getWorkMode();
-
-            var workingType = dto.getWorkingType() != null
-                    ? dto.getWorkingType()
-                    : entity.getWorkingType();
-
             var status = dto.getStatus() != null
                     ? dto.getStatus()
                     : entity.getStatus();
+
+            boolean requiresWorkSettings =
+                    entity.getPersonalInformation().getEmploymentType()
+                            != com.gm.hrms.enums.EmploymentType.INTERN;
+
+            if (requiresWorkSettings) {
+                var workMode = dto.getWorkMode() != null
+                        ? dto.getWorkMode() : entity.getWorkMode();
+
+                var workingType = dto.getWorkingType() != null
+                        ? dto.getWorkingType() : entity.getWorkingType();
+
+                if (workMode == null)
+                    throw new InvalidRequestException("Work mode is required");
+
+                if (workingType == null)
+                    throw new InvalidRequestException("Working type is required");
+            }
 
             // ===== REQUIRED CHECK =====
 
@@ -178,12 +189,6 @@ public class WorkProfileServiceImpl implements WorkProfileService {
 
             if (shiftId == null)
                 throw new InvalidRequestException("Shift is required");
-
-            if (workMode == null)
-                throw new InvalidRequestException("Work mode is required");
-
-            if (workingType == null)
-                throw new InvalidRequestException("Working type is required");
 
             if (status == null)
                 throw new InvalidRequestException("Status is required");

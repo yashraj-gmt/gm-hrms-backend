@@ -165,10 +165,8 @@ public class TraineeServiceImpl implements TraineeService {
             saveOrUpdateMentor(trainee, dto.getMentorDetails(), isDraft);
 
         // ── Documents ────────────────────────────────────────────────────────
-        if (!isDraft) {
-            documentService.validateAndSaveDocuments(
-                    p.getId(), p.getEmploymentType(), documents, reasons);
-        }
+        documentService.validateAndSaveDocuments(
+                p.getId(), p.getEmploymentType(), documents, reasons);
 
         // ── Auth on first submission ─────────────────────────────────────────
         if (isSubmitted && !authService.existsByPerson(p)) {

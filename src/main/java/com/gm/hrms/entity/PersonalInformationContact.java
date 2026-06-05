@@ -26,7 +26,11 @@ public class PersonalInformationContact {
 
     private String personalPhone;
 
+    private String personalPhoneCode;
+
     private String emergencyPhone;
+
+    private String emergencyPhoneCode;
 
     @Column(name = "personal_email")
     private String personalEmail;

@@ -1,0 +1,3 @@
+2026-06-01 11:01:17.463 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=683ms | DESC=Access token refresh | ERROR=-
+2026-06-01 11:01:45.200 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=52ms | DESC=View employee record | ERROR=-
+2026-06-01 11:01:45.270 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=9ms | DESC=View employee record | ERROR=-

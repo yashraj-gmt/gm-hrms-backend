@@ -29,7 +29,9 @@ public class PersonalInformationResponseDTO {
     private String profileImageUrl;
 
     private String personalPhone;
+    private String personalPhoneCode;
     private String emergencyPhone;
+    private String emergencyPhoneCode;
     private String personalEmail;
 
     private Boolean active;

@@ -114,7 +114,9 @@ public class PersonalInformationServiceImpl implements PersonalInformationServic
         PersonalInformationContact contact = PersonalInformationContact.builder()
                 .personalInformation(entity)
                 .personalPhone(dto.getPersonalPhone())
+                .personalPhoneCode(dto.getPersonalPhoneCode())
                 .emergencyPhone(dto.getEmergencyPhone())
+                .emergencyPhoneCode(dto.getEmergencyPhoneCode())
                 .personalEmail(dto.getPersonalEmail())
                 .officeEmail(dto.getOfficeEmail())
                 .build();

@@ -161,6 +161,9 @@ public class UserServiceImpl implements UserService {
         if (dto.getPhone() != null && person.getContact() != null) {
             person.getContact().setPersonalPhone(dto.getPhone());
         }
+        if (dto.getPhoneCode() != null && person.getContact() != null) {
+            person.getContact().setPersonalPhoneCode(dto.getPhoneCode());
+        }
         return buildProfileResponse(auth);
     }
 
@@ -220,6 +223,7 @@ public class UserServiceImpl implements UserService {
                 .fullName(p.getFirstName() + (p.getLastName() != null ? " " + p.getLastName() : ""))
                 .email(email)
                 .phone(p.getContact() != null ? p.getContact().getPersonalPhone() : null)
+                .phoneCode(p.getContact() != null ? p.getContact().getPersonalPhoneCode() : null)
                 .designation(w != null ? (w.getDesignation() != null ? w.getDesignation().getName() : null) : null)
                 .department(w != null ? (w.getDepartment() != null ? w.getDepartment().getName() : null) : null)
                 .branch(w != null ? (w.getBranch() != null ? w.getBranch().getBranchName() : null) : null)

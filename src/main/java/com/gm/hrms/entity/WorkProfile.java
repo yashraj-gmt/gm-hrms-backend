@@ -46,7 +46,6 @@ public class WorkProfile extends BaseEntity {
 
     private LocalDate dateOfJoining;
 
-
     // REPORTING MANAGER (WORK PROFILE SELF RELATION)
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -54,7 +53,6 @@ public class WorkProfile extends BaseEntity {
     private WorkProfile reportingManager;
 
     // WORK SETTINGS
-
     @Enumerated(EnumType.STRING)
     private WorkMode workMode;
 

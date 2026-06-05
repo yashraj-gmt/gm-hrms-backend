@@ -1,0 +1,56 @@
+2026-06-03 12:42:33.998 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Starting GMHrmsApplication using Java 21.0.7 with PID 399808 (D:\Projects\GM HRMS\gm-hrms-backend\target\classes started by G M TECHNOSYS in D:\Projects\GM HRMS\gm-hrms-backend)
+2026-06-03 12:42:34.005 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - The following 1 profile is active: "dev"
+2026-06-03 12:42:39.403 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-03 12:42:43.428 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-06-03 12:42:45.719 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-06-03 12:42:45.819 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-06-03 12:42:46.214 INFO  [restartedMain] c.g.h.r.s.i.JasperPayslipReportService - Payslip JRXML compiled and cached successfully from 'reports/payslip.jrxml'.
+2026-06-03 12:42:46.541 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-03 12:42:47.362 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Started GMHrmsApplication in 14.25 seconds (process running for 15.409)
+2026-06-03 12:45:08.834 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Starting GMHrmsApplication using Java 21.0.7 with PID 370580 (D:\Projects\GM HRMS\gm-hrms-backend\target\classes started by G M TECHNOSYS in D:\Projects\GM HRMS\gm-hrms-backend)
+2026-06-03 12:45:08.839 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - The following 1 profile is active: "dev"
+2026-06-03 12:45:14.723 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-03 12:45:20.358 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-06-03 12:45:22.747 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-06-03 12:45:22.858 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-06-03 12:45:23.227 INFO  [restartedMain] c.g.h.r.s.i.JasperPayslipReportService - Payslip JRXML compiled and cached successfully from 'reports/payslip.jrxml'.
+2026-06-03 12:45:23.565 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-03 12:45:24.537 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Started GMHrmsApplication in 16.638 seconds (process running for 17.594)
+2026-06-03 13:10:21.522 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-06-03 13:10:21.532 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-06-03 13:10:21.561 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-06-03 13:10:21.562 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-06-03 14:01:05.324 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=42m18s825ms78µs).
+2026-06-03 14:49:12.806 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-06-03 14:49:12.806 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-06-03 14:49:12.851 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-06-03 14:49:12.853 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-06-03 14:49:24.754 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-06-03 14:49:24.755 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-06-03 14:49:24.797 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-06-03 14:49:24.797 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-06-03 15:02:01.686 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/7/documents
+2026-06-03 15:02:01.697 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/7/documents.]
+2026-06-03 15:02:01.731 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/7/documents
+2026-06-03 15:02:01.731 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/7/documents.]
+2026-06-03 15:02:17.588 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-06-03 15:02:17.588 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-06-03 15:02:17.634 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-06-03 15:02:17.634 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-06-03 15:04:32.129 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-06-03 15:04:32.136 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-06-03 15:04:33.902 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-06-03 15:04:33.902 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-06-03 15:04:46.763 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/4/documents
+2026-06-03 15:04:46.763 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/4/documents.]
+2026-06-03 15:04:46.842 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/4/documents
+2026-06-03 15:04:46.842 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/4/documents.]
+2026-06-03 15:24:47.861 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: The current password you entered is incorrect.]
+2026-06-03 15:31:51.375 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-06-03 15:31:51.375 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-06-03 15:31:52.086 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-06-03 15:31:52.088 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-06-03 15:39:08.086 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.TokenNotFoundException: Refresh token not found]
+2026-06-03 16:08:45.437 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Invalid email or password. Please try again.]
+2026-06-03 16:34:55.556 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.TokenNotFoundException: Refresh token not found]
+2026-06-03 17:57:13.589 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Invalid email or password. Please try again.]

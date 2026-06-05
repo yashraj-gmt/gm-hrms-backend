@@ -45,7 +45,8 @@ public class SecurityConfig {
                                 "/api/auth/refresh",
                                 "/api/auth/forgot-password",
                                 "/api/auth/verify-otp",
-                                "/api/auth/reset-password"
+                                "/api/auth/reset-password",
+                                "/uploads/**"
                         ).permitAll()
 
                         // ── Protected auth endpoints ──────────────────────────

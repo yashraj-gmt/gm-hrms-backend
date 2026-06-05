@@ -77,4 +77,13 @@ public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
 
     List<Attendance> findByPersonalInformationIdAndAttendanceDateBetween(
             Long personalInformationId, LocalDate from, LocalDate to);
+
+    @Query("SELECT a FROM Attendance a " +
+           "LEFT JOIN FETCH a.calculation " +
+           "WHERE a.personalInformation.id = :personId " +
+           "AND a.attendanceDate BETWEEN :from AND :to")
+    List<Attendance> findByPersonalInformationIdAndAttendanceDateBetweenWithCalculation(
+            @Param("personId") Long personId,
+            @Param("from") LocalDate from,
+            @Param("to") LocalDate to);
 }

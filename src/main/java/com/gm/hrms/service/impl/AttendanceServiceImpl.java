@@ -260,6 +260,91 @@ public class AttendanceServiceImpl implements AttendanceService {
                 .build();
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public MyAttendanceSummaryDTO getMyAttendanceSummary(LocalDate from, LocalDate to) {
+        PersonalInformation person = getCurrentPerson();
+        LocalDate effectiveFrom = from != null ? from : LocalDate.now().minusMonths(3);
+        LocalDate effectiveTo   = to   != null ? to   : LocalDate.now();
+
+        if (effectiveFrom.isAfter(effectiveTo)) {
+            throw new InvalidRequestException("'from' date must be before 'to' date.");
+        }
+
+        List<Attendance> records = attendanceRepository
+                .findByPersonalInformationIdAndAttendanceDateBetweenWithCalculation(
+                        person.getId(), effectiveFrom, effectiveTo);
+
+        int total = records.size();
+        int present = 0;
+        int absent = 0;
+        int halfDay = 0;
+        int onLeave = 0;
+        int lateCount = 0;
+        int totalWork = 0;
+        int totalOT = 0;
+
+        for (Attendance r : records) {
+            AttendanceStatus status = r.getStatus();
+            if (status == AttendanceStatus.PRESENT) {
+                present++;
+            } else if (status == AttendanceStatus.ABSENT) {
+                absent++;
+            } else if (status == AttendanceStatus.HALF_DAY) {
+                halfDay++;
+            } else if (status == AttendanceStatus.LEAVE) {
+                onLeave++;
+            }
+
+            AttendanceCalculation calc = r.getCalculation();
+            if (calc != null) {
+                if (calc.getLateMinutes() != null && calc.getLateMinutes() > 0) {
+                    lateCount++;
+                }
+                if (calc.getWorkMinutes() != null) {
+                    totalWork += calc.getWorkMinutes();
+                }
+                if (calc.getOvertimeMinutes() != null) {
+                    totalOT += calc.getOvertimeMinutes();
+                }
+            }
+        }
+
+        LocalDate today = LocalDate.now();
+        LocalDate startOfMonth = today.withDayOfMonth(1);
+        LocalDate endOfMonth = today.withDayOfMonth(today.lengthOfMonth());
+
+        List<Attendance> currentMonthRecords = attendanceRepository
+                .findByPersonalInformationIdAndAttendanceDateBetweenWithCalculation(
+                        person.getId(), startOfMonth, endOfMonth);
+
+        int currentMonthOT = 0;
+        for (Attendance r : currentMonthRecords) {
+            AttendanceCalculation calc = r.getCalculation();
+            if (calc != null && calc.getOvertimeMinutes() != null) {
+                currentMonthOT += calc.getOvertimeMinutes();
+            }
+        }
+
+        String currentMonthName = today.getMonth().name();
+        if (currentMonthName != null && !currentMonthName.isEmpty()) {
+            currentMonthName = currentMonthName.substring(0, 1).toUpperCase() + currentMonthName.substring(1).toLowerCase();
+        }
+
+        return MyAttendanceSummaryDTO.builder()
+                .total(total)
+                .present(present)
+                .absent(absent)
+                .halfDay(halfDay)
+                .onLeave(onLeave)
+                .lateCount(lateCount)
+                .totalWork(totalWork)
+                .totalOT(totalOT)
+                .currentMonthName(currentMonthName)
+                .currentMonthOT(currentMonthOT)
+                .build();
+    }
+
     // =========================================================================
     //  ADMIN DIRECT CORRECTION
     // =========================================================================
@@ -353,6 +438,33 @@ public class AttendanceServiceImpl implements AttendanceService {
             }
         } else {
             page = correctionRepository.findAllByOrderByCreatedAtDesc(pageable);
+        }
+
+        List<AttendanceCorrectionResponseDTO> content = page.getContent()
+                .stream().map(this::toCorrectionResponse).toList();
+
+        return buildPageResponse(content, page);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public PageResponseDTO<AttendanceCorrectionResponseDTO> getMyCorrectionRequests(
+            Pageable pageable, String status) {
+
+        PersonalInformation person = getCurrentPerson();
+        Page<AttendanceCorrectionRequest> page;
+
+        if (status != null && !status.isBlank()) {
+            try {
+                CorrectionStatus cs = CorrectionStatus.valueOf(status.toUpperCase());
+                page = correctionRepository.findByPersonalInformationIdAndStatus(
+                        person.getId(), cs, pageable);
+            } catch (IllegalArgumentException e) {
+                throw new InvalidRequestException("Invalid status value: " + status);
+            }
+        } else {
+            page = correctionRepository.findByPersonalInformationId(
+                    person.getId(), pageable);
         }
 
         List<AttendanceCorrectionResponseDTO> content = page.getContent()

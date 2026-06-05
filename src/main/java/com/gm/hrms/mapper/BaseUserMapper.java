@@ -85,7 +85,9 @@ public class BaseUserMapper {
 
         return ContactResponseDTO.builder()
                 .personalPhone(contact.getPersonalPhone())
+                .personalPhoneCode(contact.getPersonalPhoneCode())
                 .emergencyPhone(contact.getEmergencyPhone())
+                .emergencyPhoneCode(contact.getEmergencyPhoneCode())
                 .personalEmail(contact.getPersonalEmail())
                 .officeEmail(contact.getOfficeEmail())
                 .build();

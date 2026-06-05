@@ -31,7 +31,7 @@ public class EmployeeListItemDTO {
     // Employment
     private LocalDate       joiningDate;
     private String          status;          // ACTIVE | INACTIVE | ON_HOLD
-    private EmploymentType  employmentType;  // EMPLOYEE | INTERN | TRAINEE
+    private EmploymentType  employmentType;  // EMPLOYEE | INTERN | TRAIN111EE
     private RecordStatus    recordStatus;    // DRAFT | SUBMITTED
     private Boolean         active;
 }

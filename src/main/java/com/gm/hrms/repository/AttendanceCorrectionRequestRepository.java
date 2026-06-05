@@ -22,6 +22,13 @@ public interface AttendanceCorrectionRequestRepository
     Page<AttendanceCorrectionRequest> findByPersonalInformationId(
             Long personId, Pageable pageable);
 
+    @Query("SELECT r FROM AttendanceCorrectionRequest r " +
+            "WHERE r.personalInformation.id = :personId " +
+            "AND r.status = :status " +
+            "ORDER BY r.createdAt DESC")
+    Page<AttendanceCorrectionRequest> findByPersonalInformationIdAndStatus(
+            Long personId, CorrectionStatus status, Pageable pageable);
+
     boolean existsByAttendanceIdAndStatusIn(Long attendanceId,
                                             java.util.List<CorrectionStatus> statuses);
 }

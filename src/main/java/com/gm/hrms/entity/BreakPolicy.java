@@ -38,20 +38,9 @@ public class BreakPolicy extends BaseEntity {
     @Column(name = "is_paid")
     private Boolean isPaid;
 
-    /**
-     * Controls the Active/Inactive status badge in the listing.
-     * false = record is visible in listing but shown as "Inactive".
-     * Set via the Edit form's status toggle (ADMIN + HR).
-     */
     @Column(name = "is_active")
     private Boolean isActive;
 
-    /**
-     * Controls soft-delete visibility.
-     * true  = record is hidden from all listings (soft-deleted).
-     * false = record appears in the listing (active or inactive).
-     * Set only via the Delete action (ADMIN only).
-     */
     @Builder.Default
     @Column(name = "is_deleted", nullable = false)
     private Boolean isDeleted = false;

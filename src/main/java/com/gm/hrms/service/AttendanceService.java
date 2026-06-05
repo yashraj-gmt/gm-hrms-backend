@@ -27,6 +27,7 @@ public interface AttendanceService {
             Pageable pageable, LocalDate from, LocalDate to, String status);
 
     AttendanceSummaryDTO getDailySummary(LocalDate date);
+    MyAttendanceSummaryDTO getMyAttendanceSummary(LocalDate from, LocalDate to);
 
     // ── Admin correction ──────────────────────────────────────────────────────
     AttendanceResponseDTO correctAttendance(AttendanceCorrectionRequestDTO dto);
@@ -34,6 +35,8 @@ public interface AttendanceService {
     // ── Correction request workflow ───────────────────────────────────────────
     AttendanceCorrectionResponseDTO submitCorrectionRequest(CorrectionRequestSubmitDTO dto);
     PageResponseDTO<AttendanceCorrectionResponseDTO> getCorrectionRequests(
+            Pageable pageable, String status);
+    PageResponseDTO<AttendanceCorrectionResponseDTO> getMyCorrectionRequests(
             Pageable pageable, String status);
     AttendanceCorrectionResponseDTO approveCorrectionRequest(Long id);
     AttendanceCorrectionResponseDTO rejectCorrectionRequest(Long id, String remarks);

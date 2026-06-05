@@ -49,14 +49,14 @@ public class AttendanceController {
         return ok("Break ended", service.breakEnd());
     }
 
-    // ── My today ──────────────────────────────────────────────────────────────
+    // My today
 
     @GetMapping("/today/me")
     public ResponseEntity<ApiResponse<AttendanceResponseDTO>> getMyToday() {
         return ok("Today's attendance", service.getMyTodayAttendance());
     }
 
-    // ── Admin: today for specific employee ────────────────────────────────────
+    // Admin: today for specific employee
 
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @GetMapping("/today/{personalInformationId}")
@@ -83,7 +83,7 @@ public class AttendanceController {
                 service.getAllAttendance(pageable, date, status, department));
     }
 
-    // ── Admin: daily summary stats ────────────────────────────────────────────
+    // ── Admin: daily summary stats
 
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @GetMapping("/summary")
@@ -112,6 +112,16 @@ public class AttendanceController {
         return ok("History fetched", service.getMyHistory(pageable, from, to, status));
     }
 
+    @PreAuthorize("hasAnyRole('EMPLOYEE','INTERN','TRAINEE','ADMIN','HR')")
+    @GetMapping("/my-summary")
+    public ResponseEntity<ApiResponse<MyAttendanceSummaryDTO>> mySummary(
+            @RequestParam(required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
+            @RequestParam(required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate to) {
+        return ok("My attendance summary fetched", service.getMyAttendanceSummary(from, to));
+    }
+
     // ── Admin: direct correction ──────────────────────────────────────────────
 
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
@@ -123,7 +133,7 @@ public class AttendanceController {
         return ok("Attendance corrected", service.correctAttendance(dto));
     }
 
-    // ── Employee: submit correction request ───────────────────────────────────
+    // ── Employee: submit correction request
 
     @PreAuthorize("hasAnyRole('EMPLOYEE','INTERN','TRAINEE')")
     @PostMapping("/correction-requests")
@@ -132,7 +142,7 @@ public class AttendanceController {
         return ok("Correction request submitted", service.submitCorrectionRequest(dto));
     }
 
-    // ── Admin: list correction requests ──────────────────────────────────────
+    // ── Admin: list correction requests
 
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @GetMapping("/correction-requests")
@@ -147,6 +157,21 @@ public class AttendanceController {
                 service.getCorrectionRequests(pageable, status));
     }
 
+    // ── Employee: list own correction requests ────────────────────────────────
+
+    @PreAuthorize("hasAnyRole('EMPLOYEE','INTERN','TRAINEE')")
+    @GetMapping("/my-correction-requests")
+    public ResponseEntity<ApiResponse<PageResponseDTO<AttendanceCorrectionResponseDTO>>> myRequests(
+            @RequestParam(defaultValue = "0")  int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) String status) {
+
+        Pageable pageable = PageRequest.of(page, size,
+                Sort.by(Sort.Direction.DESC, "createdAt"));
+        return ok("My correction requests fetched",
+                service.getMyCorrectionRequests(pageable, status));
+    }
+
     // ── Admin: approve ────────────────────────────────────────────────────────
 
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
@@ -158,7 +183,7 @@ public class AttendanceController {
         return ok("Request approved", service.approveCorrectionRequest(id));
     }
 
-    // ── Admin: reject ─────────────────────────────────────────────────────────
+    // ── Admin: reject
 
     @PreAuthorize("hasAnyRole('ADMIN','HR')")
     @PatchMapping("/correction-requests/{id}/reject")

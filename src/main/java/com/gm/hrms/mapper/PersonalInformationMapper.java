@@ -83,7 +83,9 @@ public class PersonalInformationMapper {
 
                 // NULL SAFE CONTACT
                 .personalPhone(contact != null ? contact.getPersonalPhone() : null)
+                .personalPhoneCode(contact != null ? contact.getPersonalPhoneCode() : null)
                 .emergencyPhone(contact != null ? contact.getEmergencyPhone() : null)
+                .emergencyPhoneCode(contact != null ? contact.getEmergencyPhoneCode() : null)
                 .personalEmail(contact != null ? contact.getPersonalEmail() : null)
 
                 .active(personalInformation.getActive())
@@ -98,8 +100,14 @@ public class PersonalInformationMapper {
         if (dto.getPersonalPhone() != null)
             contact.setPersonalPhone(dto.getPersonalPhone());
 
+        if (dto.getPersonalPhoneCode() != null)
+            contact.setPersonalPhoneCode(dto.getPersonalPhoneCode());
+
         if (dto.getEmergencyPhone() != null)
             contact.setEmergencyPhone(dto.getEmergencyPhone());
+
+        if (dto.getEmergencyPhoneCode() != null)
+            contact.setEmergencyPhoneCode(dto.getEmergencyPhoneCode());
 
         if (dto.getPersonalEmail() != null)
             contact.setPersonalEmail(dto.getPersonalEmail());

@@ -23,7 +23,9 @@ public class PersonalInformationRequestDTO {
 
     // Contact
     private String personalPhone;
+    private String personalPhoneCode;
     private String emergencyPhone;
+    private String emergencyPhoneCode;
 
     @Email(message = "Invalid email format")
     private String personalEmail;

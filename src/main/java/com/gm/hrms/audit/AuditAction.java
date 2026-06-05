@@ -64,7 +64,6 @@ public enum AuditAction {
     VIEW,
     EXPORT,
 
-
     // ── Attendance ────────────────────────────────────────
     ATTENDANCE_CHECK_IN,
     ATTENDANCE_CHECK_OUT,

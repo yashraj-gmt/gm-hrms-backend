@@ -171,10 +171,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         // ── Documents ─────────────────────────────────────────────────────────
-        if (!isDraft) {
-            documentService.validateAndSaveDocuments(
-                    person.getId(), person.getEmploymentType(), documents, reasons);
-        }
+        documentService.validateAndSaveDocuments(
+                person.getId(), person.getEmploymentType(), documents, reasons);
 
         // ── Auth trigger on first submission ──────────────────────────────────
         if (isSubmitted && !authService.existsByPerson(person)) {
@@ -415,7 +413,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         String email    = (ct != null && ct.getOfficeEmail()  != null) ? ct.getOfficeEmail()   :
                 (ct != null ? ct.getPersonalEmail() : null);
-        String phone    = (ct != null) ? ct.getPersonalPhone() : null;
+        String phone    = (ct != null) ? ((ct.getPersonalPhoneCode() != null && !ct.getPersonalPhoneCode().isEmpty() ? ct.getPersonalPhoneCode() + " " : "") + ct.getPersonalPhone()) : null;
 
         String deptName = (wp != null && wp.getDepartment()  != null) ? wp.getDepartment().getName()  : null;
         String desigName= (wp != null && wp.getDesignation() != null) ? wp.getDesignation().getName() : null;
@@ -477,7 +475,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         String email = (ct != null && ct.getOfficeEmail()  != null) ? ct.getOfficeEmail()
                 : (ct != null ? ct.getPersonalEmail() : null);
-        String phone = ct != null ? ct.getPersonalPhone() : null;
+        String phone = ct != null ? ((ct.getPersonalPhoneCode() != null && !ct.getPersonalPhoneCode().isEmpty() ? ct.getPersonalPhoneCode() + " " : "") + ct.getPersonalPhone()) : null;
 
         String deptName  = (wp != null && wp.getDepartment()  != null) ? wp.getDepartment().getName()   : null;
         String desigName = (wp != null && wp.getDesignation() != null) ? wp.getDesignation().getName()  : null;

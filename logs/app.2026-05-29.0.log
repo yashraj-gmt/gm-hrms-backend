@@ -1,0 +1,574 @@
+2026-05-29 09:50:56.933 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Starting GMHrmsApplication using Java 21.0.7 with PID 237756 (D:\Projects\GM HRMS\gm-hrms-backend\target\classes started by G M TECHNOSYS in D:\Projects\GM HRMS\gm-hrms-backend)
+2026-05-29 09:50:56.946 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - The following 1 profile is active: "dev"
+2026-05-29 09:51:14.903 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29 09:51:31.212 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-29 09:51:38.146 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 09:51:38.590 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 09:51:39.740 INFO  [restartedMain] c.g.h.r.s.i.JasperPayslipReportService - Payslip JRXML compiled and cached successfully from 'reports/payslip.jrxml'.
+2026-05-29 09:51:40.777 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29 09:51:44.320 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Started GMHrmsApplication in 48.61 seconds (process running for 49.885)
+2026-05-29 10:11:47.121 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Invalid email or password. Please try again.]
+2026-05-29 10:11:48.437 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Invalid email or password. Please try again.]
+2026-05-29 10:47:21.570 INFO  [email-1] c.g.h.service.impl.EmailServiceImpl - Email sent → emo@gmt.com [GM HRMS - Your Login Credentials]
+2026-05-29 10:47:21.834 INFO  [email-2] c.g.h.service.impl.EmailServiceImpl - Email sent → emo@gmt.com [GM HRMS - Your Login Credentials]
+2026-05-29 12:52:38.634 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Aadhaar Card is mandatory. Upload document or provide reason.]
+2026-05-29 14:01:00.335 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=26m41s779ms465µs600ns).
+2026-05-29 14:30:17.445 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:30:17.455 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:30:17.477 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:30:17.479 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:30:17.507 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:30:17.508 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:31:31.159 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:31:31.160 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:31:31.195 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:31:31.196 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:31:31.733 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:31:31.734 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:31:31.749 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:31:31.750 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:32:07.898 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/45/documents
+2026-05-29 14:32:07.898 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/45/documents.]
+2026-05-29 14:32:07.920 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/45/documents
+2026-05-29 14:32:07.922 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/45/documents.]
+2026-05-29 14:38:18.739 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/45/documents
+2026-05-29 14:38:18.741 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/45/documents.]
+2026-05-29 14:38:18.776 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/45/documents
+2026-05-29 14:38:18.777 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/45/documents.]
+2026-05-29 14:39:35.711 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:39:35.712 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:39:35.736 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:39:35.737 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:41:35.650 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/45/documents
+2026-05-29 14:41:35.651 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/45/documents.]
+2026-05-29 14:41:35.671 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/45/documents
+2026-05-29 14:41:35.671 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/45/documents.]
+2026-05-29 14:41:55.102 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 14:41:55.102 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 14:41:55.122 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 14:41:55.123 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 14:42:03.219 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 14:42:03.220 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 14:42:03.247 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 14:42:03.248 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 14:46:47.167 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:46:47.168 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 14:46:47.193 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 14:46:47.193 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 15:50:05.491 INFO  [email-3] c.g.h.service.impl.EmailServiceImpl - Email sent → ofitemo@gmt.com [GM HRMS - Your Login Credentials]
+2026-05-29 15:50:05.638 INFO  [email-4] c.g.h.service.impl.EmailServiceImpl - Email sent → ofitemo@gmt.com [GM HRMS - Your Login Credentials]
+2026-05-29 15:50:09.454 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 15:50:09.464 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 15:50:09.482 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 15:50:09.486 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 15:50:29.815 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 15:50:29.815 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 15:50:29.914 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 15:50:29.928 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 15:50:39.487 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 15:50:39.491 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 15:50:39.543 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 15:50:39.548 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 15:51:46.175 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/7/documents
+2026-05-29 15:51:46.178 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/7/documents.]
+2026-05-29 15:51:46.219 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/7/documents
+2026-05-29 15:51:46.219 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/7/documents.]
+2026-05-29 16:30:10.763 WARN  [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m38s557ms229µs500ns).
+2026-05-29 16:36:39.615 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:36:39.617 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:36:39.713 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:36:39.714 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:36:43.356 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 16:36:43.357 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 16:36:43.419 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 16:36:43.421 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 16:39:15.583 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/3/documents
+2026-05-29 16:39:15.585 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/3/documents.]
+2026-05-29 16:39:15.655 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/3/documents
+2026-05-29 16:39:15.656 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/3/documents.]
+2026-05-29 16:39:18.475 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 16:39:18.476 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 16:39:18.506 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 16:39:18.508 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 16:39:28.469 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:39:28.470 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:39:28.488 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:39:28.490 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:41:04.151 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:41:04.152 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:41:04.176 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:41:04.177 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:41:40.770 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:41:40.771 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:41:40.792 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:41:40.793 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:42:04.329 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:42:04.330 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:42:04.365 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:42:04.366 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:51:27.118 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:51:27.120 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:51:27.147 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:51:27.148 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:51:34.576 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:51:34.577 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:51:34.597 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/27/documents
+2026-05-29 16:51:34.598 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/27/documents.]
+2026-05-29 16:51:50.067 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:51:50.068 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:51:50.084 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:51:50.085 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:53:38.963 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/5/documents
+2026-05-29 16:53:38.964 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/5/documents.]
+2026-05-29 16:53:38.986 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/5/documents
+2026-05-29 16:53:38.986 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/5/documents.]
+2026-05-29 16:53:50.993 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:53:50.994 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:53:51.016 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 16:53:51.016 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 16:54:08.028 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/3/documents
+2026-05-29 16:54:08.029 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/3/documents.]
+2026-05-29 16:54:08.053 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/3/documents
+2026-05-29 16:54:08.054 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/3/documents.]
+2026-05-29 16:56:11.593 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 16:56:11.596 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 16:56:11.664 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 16:56:11.664 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 17:06:30.921 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Starting GMHrmsApplication using Java 21.0.7 with PID 266848 (D:\Projects\GM HRMS\gm-hrms-backend\target\classes started by G M TECHNOSYS in D:\Projects\GM HRMS\gm-hrms-backend)
+2026-05-29 17:06:30.925 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - The following 1 profile is active: "dev"
+2026-05-29 17:06:35.578 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29 17:06:39.598 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-29 17:06:41.807 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 17:06:41.911 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 17:06:42.251 INFO  [restartedMain] c.g.h.r.s.i.JasperPayslipReportService - Payslip JRXML compiled and cached successfully from 'reports/payslip.jrxml'.
+2026-05-29 17:06:42.529 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29 17:06:43.301 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Started GMHrmsApplication in 13.053 seconds (process running for 13.904)
+2026-05-29 17:07:10.135 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/10/documents
+2026-05-29 17:07:10.150 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/10/documents.]
+2026-05-29 17:07:10.216 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/10/documents
+2026-05-29 17:07:10.216 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/10/documents.]
+2026-05-29 17:07:15.130 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/14/documents
+2026-05-29 17:07:15.130 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/14/documents.]
+2026-05-29 17:07:15.183 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/14/documents
+2026-05-29 17:07:15.194 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/14/documents.]
+2026-05-29 17:07:18.592 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:07:18.594 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:07:18.631 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:07:18.631 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:13:05.649 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-05-29 17:13:05.651 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-05-29 17:13:05.687 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-05-29 17:13:05.689 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-05-29 17:13:15.467 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/10/documents
+2026-05-29 17:13:15.474 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/10/documents.]
+2026-05-29 17:13:15.512 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/10/documents
+2026-05-29 17:13:15.514 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/10/documents.]
+2026-05-29 17:13:45.777 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Aadhaar Card is mandatory. Upload document or provide reason.]
+2026-05-29 17:13:55.200 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.gm.hrms.exception.InvalidRequestException: Offer Letter is mandatory. Upload document or provide reason.]
+2026-05-29 17:14:38.997 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/12/documents
+2026-05-29 17:14:38.999 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/12/documents.]
+2026-05-29 17:14:39.040 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/12/documents
+2026-05-29 17:14:39.043 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/12/documents.]
+2026-05-29 17:14:55.729 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 17:14:55.729 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 17:14:55.772 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 17:14:55.776 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 17:15:57.151 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-05-29 17:15:57.154 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-05-29 17:15:57.227 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/11/documents
+2026-05-29 17:15:57.229 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/11/documents.]
+2026-05-29 17:16:06.108 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:16:06.110 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:16:06.137 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:16:06.139 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:16:18.747 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/48/documents
+2026-05-29 17:16:18.748 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/48/documents.]
+2026-05-29 17:16:18.775 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/48/documents
+2026-05-29 17:16:18.776 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/48/documents.]
+2026-05-29 17:23:37.604 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:23:37.606 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:23:37.701 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:23:37.702 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:25:12.774 ERROR [http-nio-8080-exec-3] c.g.h.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'employee' for method parameter type String is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:219)
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:195)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:123)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:230)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:877)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at com.gm.hrms.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:72)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-05-29 17:25:12.779 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'employee' for method parameter type String is not present]
+2026-05-29 17:25:16.722 ERROR [http-nio-8080-exec-4] c.g.h.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'employee' for method parameter type String is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:219)
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:195)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:123)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:230)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:877)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at com.gm.hrms.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:72)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-05-29 17:25:16.723 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'employee' for method parameter type String is not present]
+2026-05-29 17:25:34.787 ERROR [http-nio-8080-exec-6] c.g.h.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'employee' for method parameter type String is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:219)
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:195)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:123)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:230)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1003)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:877)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:235)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:181)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at com.gm.hrms.config.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:72)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-05-29 17:25:34.789 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'employee' for method parameter type String is not present]
+2026-05-29 17:36:25.367 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:36:25.370 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:36:25.429 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:36:25.430 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:36:25.496 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:36:25.497 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:36:30.463 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:36:30.464 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:36:30.495 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:36:30.496 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:36:54.293 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/3/documents
+2026-05-29 17:36:54.294 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/3/documents.]
+2026-05-29 17:36:54.332 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/3/documents
+2026-05-29 17:36:54.333 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/3/documents.]
+2026-05-29 17:37:01.026 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:37:01.027 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:37:01.051 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:37:01.052 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:38:10.079 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:38:10.081 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:38:10.149 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:38:10.150 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:44:14.613 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:44:14.614 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:44:14.691 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:44:14.692 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:50:21.680 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:50:21.683 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:50:21.716 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:50:21.716 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:51:36.920 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:51:36.924 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:51:36.968 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:51:36.972 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:52:07.993 WARN  [http-nio-8080-exec-5] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:52:07.995 WARN  [http-nio-8080-exec-5] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:52:08.040 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 17:52:08.042 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 17:54:29.041 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 17:54:29.043 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 17:54:29.135 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/2/documents
+2026-05-29 17:54:29.135 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/2/documents.]
+2026-05-29 17:54:47.138 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/19/documents
+2026-05-29 17:54:47.140 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/19/documents.]
+2026-05-29 17:54:47.175 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/19/documents
+2026-05-29 17:54:47.176 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/19/documents.]
+2026-05-29 18:01:44.542 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Starting GMHrmsApplication using Java 21.0.7 with PID 262368 (D:\Projects\GM HRMS\gm-hrms-backend\target\classes started by G M TECHNOSYS in D:\Projects\GM HRMS\gm-hrms-backend)
+2026-05-29 18:01:44.546 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - The following 1 profile is active: "dev"
+2026-05-29 18:01:48.588 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29 18:01:52.508 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-29 18:01:54.658 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 18:01:54.756 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 18:01:55.123 INFO  [restartedMain] c.g.h.r.s.i.JasperPayslipReportService - Payslip JRXML compiled and cached successfully from 'reports/payslip.jrxml'.
+2026-05-29 18:01:55.463 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29 18:01:56.206 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Started GMHrmsApplication in 12.327 seconds (process running for 13.338)
+2026-05-29 18:02:20.408 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 18:02:20.429 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 18:02:20.447 WARN  [http-nio-8080-exec-8] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 18:02:20.447 WARN  [http-nio-8080-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 18:03:52.655 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Starting GMHrmsApplication using Java 21.0.7 with PID 262720 (D:\Projects\GM HRMS\gm-hrms-backend\target\classes started by G M TECHNOSYS in D:\Projects\GM HRMS\gm-hrms-backend)
+2026-05-29 18:03:52.658 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - The following 1 profile is active: "dev"
+2026-05-29 18:03:56.874 WARN  [restartedMain] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29 18:04:00.442 WARN  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-05-29 18:04:02.381 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 18:04:02.463 WARN  [restartedMain] n.s.j.engine.xml.JRTextFieldFactory - The 'isStretchWithOverflow' attribute is deprecated. Use the 'textAdjust' attribute instead.
+2026-05-29 18:04:02.768 INFO  [restartedMain] c.g.h.r.s.i.JasperPayslipReportService - Payslip JRXML compiled and cached successfully from 'reports/payslip.jrxml'.
+2026-05-29 18:04:03.034 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29 18:04:03.838 INFO  [restartedMain] com.gm.hrms.GMHrmsApplication - Started GMHrmsApplication in 11.959 seconds (process running for 12.775)
+2026-05-29 18:04:28.965 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 18:04:28.983 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 18:04:29.068 WARN  [http-nio-8080-exec-4] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 18:04:29.071 WARN  [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 18:12:17.161 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 18:12:17.163 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 18:12:17.210 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/49/documents
+2026-05-29 18:12:17.210 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/49/documents.]
+2026-05-29 18:26:21.403 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 18:26:21.409 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 18:26:21.441 WARN  [http-nio-8080-exec-9] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/1/documents
+2026-05-29 18:26:21.441 WARN  [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/1/documents.]
+2026-05-29 18:26:28.067 WARN  [http-nio-8080-exec-1] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/16/documents
+2026-05-29 18:26:28.081 WARN  [http-nio-8080-exec-1] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/16/documents.]
+2026-05-29 18:26:28.143 WARN  [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/16/documents
+2026-05-29 18:26:28.143 WARN  [http-nio-8080-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/16/documents.]
+2026-05-29 18:26:33.154 WARN  [http-nio-8080-exec-2] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/15/documents
+2026-05-29 18:26:33.167 WARN  [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/15/documents.]
+2026-05-29 18:26:33.226 WARN  [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/15/documents
+2026-05-29 18:26:33.240 WARN  [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/15/documents.]
+2026-05-29 18:26:42.492 WARN  [http-nio-8080-exec-3] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/48/documents
+2026-05-29 18:26:42.498 WARN  [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/48/documents.]
+2026-05-29 18:26:42.539 WARN  [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound - No mapping for GET /api/persons/48/documents
+2026-05-29 18:26:42.539 WARN  [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.NoHandlerFoundException: No endpoint GET /api/persons/48/documents.]

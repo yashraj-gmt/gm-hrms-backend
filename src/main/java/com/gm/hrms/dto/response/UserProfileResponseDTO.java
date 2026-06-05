@@ -10,6 +10,7 @@ public class UserProfileResponseDTO {
     private String fullName;
     private String email;          // officeEmail or personalEmail
     private String phone;
+    private String phoneCode;
     private String designation;
     private String department;
     private String branch;

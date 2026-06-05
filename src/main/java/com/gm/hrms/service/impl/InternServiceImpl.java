@@ -218,15 +218,12 @@ public class InternServiceImpl implements InternService {
 
         // ================= DOCUMENT =================
 
-        if (!isDraft) {
-
-            documentService.validateAndSaveDocuments(
-                    p.getId(),
-                    p.getEmploymentType(),
-                    documents,
-                    reasons
-            );
-        }
+        documentService.validateAndSaveDocuments(
+                p.getId(),
+                p.getEmploymentType(),
+                documents,
+                reasons
+        );
 
         return InternMapper.toResponse(intern);
     }

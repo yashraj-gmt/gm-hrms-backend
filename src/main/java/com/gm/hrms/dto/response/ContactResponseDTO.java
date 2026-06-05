@@ -10,5 +10,7 @@ public class ContactResponseDTO {
     private String personalEmail;
     private String officeEmail;
     private String personalPhone;
+    private String personalPhoneCode;
     private String emergencyPhone;
+    private String emergencyPhoneCode;
 }

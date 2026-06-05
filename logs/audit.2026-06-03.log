@@ -1,0 +1,43 @@
+2026-06-03 12:45:47.270 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=541ms | DESC=User login attempt | ERROR=-
+2026-06-03 13:10:21.427 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=30ms | DESC=Access token refresh | ERROR=-
+2026-06-03 13:10:21.492 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=42ms | DESC=View employee record | ERROR=-
+2026-06-03 13:10:21.543 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=24ms | DESC=View employee record | ERROR=-
+2026-06-03 13:15:26.413 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=170ms | DESC=User login attempt | ERROR=-
+2026-06-03 14:00:55.407 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=24ms | DESC=Access token refresh | ERROR=-
+2026-06-03 14:16:25.692 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=26ms | DESC=Access token refresh | ERROR=-
+2026-06-03 14:43:01.686 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=240ms | DESC=User login attempt | ERROR=-
+2026-06-03 14:46:23.273 [AUDIT] ACTION=UPDATE_BRANCH | RESOURCE=Branch | USER=yashraj.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=111ms | DESC=Reorder branch hierarchy | ERROR=-
+2026-06-03 14:48:10.329 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=115ms | DESC=User login attempt | ERROR=-
+2026-06-03 14:49:12.761 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=34ms | DESC=View employee record | ERROR=-
+2026-06-03 14:49:12.806 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=5ms | DESC=View employee record | ERROR=-
+2026-06-03 14:49:24.718 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=14ms | DESC=View employee record | ERROR=-
+2026-06-03 14:49:24.743 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=5ms | DESC=View employee record | ERROR=-
+2026-06-03 15:02:01.636 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=60ms | DESC=View employee record | ERROR=-
+2026-06-03 15:02:01.702 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=21ms | DESC=View employee record | ERROR=-
+2026-06-03 15:02:17.538 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=84ms | DESC=View employee record | ERROR=-
+2026-06-03 15:02:17.598 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=10ms | DESC=View employee record | ERROR=-
+2026-06-03 15:03:24.586 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=17ms | DESC=Access token refresh | ERROR=-
+2026-06-03 15:04:32.101 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=41ms | DESC=View employee record | ERROR=-
+2026-06-03 15:04:32.145 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=16ms | DESC=View employee record | ERROR=-
+2026-06-03 15:04:46.699 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=28ms | DESC=View employee record | ERROR=-
+2026-06-03 15:04:46.763 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=6ms | DESC=View employee record | ERROR=-
+2026-06-03 15:13:44.336 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=100ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:19:12.686 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=113ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:19:48.758 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=105ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:20:11.017 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=144ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:20:46.922 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=79ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:22:25.540 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=113ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:24:04.993 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=115ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:24:47.846 [AUDIT] ACTION=CHANGE_PASSWORD | RESOURCE=Auth | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=93ms | DESC=Password change request | ERROR=The current password you entered is incorrect.
+2026-06-03 15:25:16.796 [AUDIT] ACTION=CHANGE_PASSWORD | RESOURCE=Auth | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=264ms | DESC=Password change request | ERROR=-
+2026-06-03 15:31:51.341 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=24ms | DESC=View employee record | ERROR=-
+2026-06-03 15:31:51.386 [AUDIT] ACTION=VIEW_EMPLOYEE | RESOURCE=Employee | USER=raksha.gmtechnosys@gmail.com | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=22ms | DESC=View employee record | ERROR=-
+2026-06-03 15:39:08.086 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=10ms | DESC=Access token refresh | ERROR=Refresh token not found
+2026-06-03 15:39:12.746 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=95ms | DESC=User login attempt | ERROR=-
+2026-06-03 15:57:46.986 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=27ms | DESC=Access token refresh | ERROR=-
+2026-06-03 16:08:45.436 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=95ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-06-03 16:09:07.227 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=171ms | DESC=User login attempt | ERROR=-
+2026-06-03 16:34:55.556 [AUDIT] ACTION=REFRESH_TOKEN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=30ms | DESC=Access token refresh | ERROR=Refresh token not found
+2026-06-03 16:35:12.503 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=239ms | DESC=User login attempt | ERROR=-
+2026-06-03 17:57:13.536 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=FAILURE | DURATION=325ms | DESC=User login attempt | ERROR=Invalid email or password. Please try again.
+2026-06-03 17:57:15.170 [AUDIT] ACTION=LOGIN | RESOURCE=Auth | USER=anonymous | IP=0:0:0:0:0:0:0:1 | STATUS=SUCCESS | DURATION=391ms | DESC=User login attempt | ERROR=-

@@ -6,6 +6,7 @@ import com.gm.hrms.audit.Auditable;
 import com.gm.hrms.audit.AuditAction;
 import com.gm.hrms.dto.request.EmployeeStatusUpdateDTO;
 import com.gm.hrms.dto.request.EmployeeUpdateDTO;
+import com.gm.hrms.dto.response.EmployeeListItemDTO;
 import com.gm.hrms.dto.response.EmployeeListResponseDTO;
 import com.gm.hrms.dto.response.EmployeeResponseDTO;
 import com.gm.hrms.enums.RecordStatus;
@@ -19,6 +20,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -106,6 +108,18 @@ public class EmployeeController {
                 .build());
     }
 
+//
+//    @PreAuthorize("hasAnyRole('ADMIN','HR')")
+//    @GetMapping("/active-list")
+//    public ResponseEntity<ApiResponse<List<EmployeeListItemDTO>>> getActiveList() {
+//        return ResponseEntity.ok(
+//                ApiResponse.<List<EmployeeListItemDTO>>builder()
+//                        .success(true)
+//                        .message("Active employees fetched successfully")
+//                        .data(service.getActiveEmployeeList())
+//                        .build()
+//        );
+//    }
 
     // =========================================================================
     // STATUS UPDATE  —  HR + ADMIN
